@@ -1,0 +1,36 @@
+{
+  "repository": "https://github.com/zerostone-git/sinabeulo.git",
+  "author": {
+    "name": "Yeongseok Yoon",
+    "email": "megrez@live.com"
+  },
+  "license": "UNLICENSED",
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "packages/sinabeulo-utils",
+      "packages/sinabeulo-styles",
+      "packages/sinabeulo-react",
+      "packages/sinabeulo-react-docs",
+      "packages/sinabeulo-vue",
+      "packages/sinabeulo-vue-docs"
+    ],
+    "nohoist": [
+      "**/@types/react",
+      "**/@types/react-dom",
+      "**/@types/react-router",
+      "**/@types/react-router-dom",
+      "**/@mdx-js/loader",
+      "**/@mdx-js/mdx",
+      "**/@mdx-js/react",
+      "**/@mdx-js/util"
+    ]
+  },
+  "scripts": {
+    "serve-react": "yarn workspace @sinabeulo/react-docs serve",
+    "serve-vue": "yarn workspace @sinabeulo/vue-docs serve",
+    "test": "yarn workspaces run test",
+    "prebuild": "tsc --build --clean",
+    "build": "yarn workspaces run build"
+  }
+}
