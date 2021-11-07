@@ -1,0 +1,120 @@
+@import '../../mixin.scss';
+
+.root {
+  background-color: var(--buttonBackground);
+  border: 1px solid var(--buttonBorder);
+  border-radius: 2px;
+  box-sizing: border-box;
+  color: var(--buttonText);
+  cursor: pointer;
+  display: inline-block;
+  font-family: var(--font-family-m);
+  font-size: var(--font-size-m);
+  font-weight: var(--font-weight-m);
+  height: var(--font-size-xxxxxl);
+  min-width: 80px;
+  outline: transparent;
+  padding: 0px var(--space-m);
+  position: relative;
+  text-decoration: none;
+  text-align: center;
+  user-select: none;
+  &:hover {
+    background-color: var(--buttonBackgroundHovered);
+    color: var(--buttonTextHovered);
+  }
+  &:active {
+    background-color: var(--buttonBackgroundPressed);
+    color: var(--buttonTextPressed);
+  }
+  &:disabled {
+    background-color: var(--buttonBackgroundDisabled);
+    border-color: var(--buttonBorderDisabled);
+    color: var(--buttonTextDisabled);
+    cursor: default;
+  }
+}
+.container {
+  align-items: center;
+  display: flex;
+  flex-wrap: nowrap;
+  height: 100%;
+  justify-content: center;
+}
+.label {
+  font-weight: var(--font-weight-bold);
+  display: block;
+  line-height: 100%;
+  margin: 0px var(--space-xxs);
+}
+
+// .root {
+//   @include padding(0, m, 0, m);
+//   @include font-m();
+//   border: 1px solid var(--button-border);
+//   border-radius: 2px;
+//   background-color: var(--button-background);
+//   color: var(--button-text);
+//   cursor: pointer;
+//   font-weight: 600;
+//   height: 32px;
+//   text-decoration: none;
+//   &:hover:not(:disabled) {
+//     background-color: var(--button-background-hovered);
+//     color: var(--button-text-hovered);
+//   }
+//   &:active:not(:disabled) {
+//     background-color: var(--button-background-pressed);
+//     color: var(--button-text-pressed);
+//   }
+//   &:disabled {
+//     background-color: var(--button-background-disabled);
+//     border-color: var(--button-border-disabled);
+//     color: var(--button-text-disabled);
+//     cursor: default;
+//   }
+//   &.checked:not(:disabled) {
+//     background-color: var(--button-background-checked);
+//     color: var(--button-text-checked);
+//     &:hover {
+//       background-color: var(--button-background-checked-hovered);
+//       color: var(--button-text-checked-hovered);
+//     }
+//   }
+// }
+
+// .rootPrimary {
+//   composes: root;
+//   border-color: var(--primary-button-border);
+//   background-color: var(--primary-button-background);
+//   color: var(--primary-button-text);
+//   &:hover:not(:disabled) {
+//     background-color: var(--primary-button-background-hovered);
+//     color: var(--primary-button-text-hovered);
+//   }
+//   &:active:not(:disabled) {
+//     background-color: var(--primary-button-background-pressed);
+//     color: var(--primary-button-text-pressed);
+//   }
+//   &.checked:not(:disabled) {
+//     background-color: var(--primary-button-background-checked);
+//     color: var(--primary-button-text-checked);
+//     &:hover {
+//       background-color: var(--primary-button-background-checked-hovered);
+//       color: var(--primary-button-text-checked-hovered);
+//     }
+//   }
+//   &:disabled {
+//     background-color: var(--primary-button-background-disabled);
+//     border-color: var(--primary-button-border-disabled);
+//     color: var(--primary-button-text-disabled);
+//   }
+// }
+
+// .container {
+//   align-items: center;
+//   display: flex;
+//   flex-wrap: nowrap;
+//   height: 100%;
+//   justify-content: center;
+// }

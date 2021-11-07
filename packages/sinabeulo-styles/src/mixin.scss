@@ -1,0 +1,202 @@
+@mixin padding($top, $right, $bottom, $left) {
+  @if $top == xxs {
+    padding-top: var(--space-xxs);
+  } @else if $top == xs {
+    padding-top: var(--space-xs);
+  } @else if $top == s {
+    padding-top: var(--space-s);
+  } @else if $top == m {
+    padding-top: var(--space-m);
+  } @else if $top == l {
+    padding-top: var(--space-l);
+  } @else if $top == xl {
+    padding-top: var(--space-xl);
+  } @else if $top == xxl {
+    padding-top: var(--space-xxl);
+  } @else {
+    padding-top: $top;
+  }
+  @if $right == xxs {
+    padding-right: var(--space-xxs);
+  } @else if $right == xs {
+    padding-right: var(--space-xs);
+  } @else if $right == s {
+    padding-right: var(--space-s);
+  } @else if $right == m {
+    padding-right: var(--space-m);
+  } @else if $right == l {
+    padding-right: var(--space-l);
+  } @else if $right == xl {
+    padding-right: var(--space-xl);
+  } @else if $right == xxl {
+    padding-right: var(--space-xxl);
+  } @else {
+    padding-right: $right;
+  }
+  @if $bottom == xxs {
+    padding-bottom: var(--space-xxs);
+  } @else if $bottom == xs {
+    padding-bottom: var(--space-xs);
+  } @else if $bottom == s {
+    padding-bottom: var(--space-s);
+  } @else if $bottom == m {
+    padding-bottom: var(--space-m);
+  } @else if $bottom == l {
+    padding-bottom: var(--space-l);
+  } @else if $bottom == xl {
+    padding-bottom: var(--space-xl);
+  } @else if $bottom == xxl {
+    padding-bottom: var(--space-xxl);
+  } @else {
+    padding-bottom: $bottom;
+  }
+  @if $left == xxs {
+    padding-left: var(--space-xxs);
+  } @else if $left == xs {
+    padding-left: var(--space-xs);
+  } @else if $left == s {
+    padding-left: var(--space-s);
+  } @else if $left == m {
+    padding-left: var(--space-m);
+  } @else if $left == l {
+    padding-left: var(--space-l);
+  } @else if $left == xl {
+    padding-left: var(--space-xl);
+  } @else if $left == xxl {
+    padding-left: var(--space-xxl);
+  } @else {
+    padding-left: $left;
+  }
+}
+
+@mixin margin($top, $right, $bottom, $left) {
+  @if $top == xxs {
+    margin-top: var(--space-xxs);
+  } @else if $top == xs {
+    margin-top: var(--space-xs);
+  } @else if $top == s {
+    margin-top: var(--space-s);
+  } @else if $top == m {
+    margin-top: var(--space-m);
+  } @else if $top == l {
+    margin-top: var(--space-l);
+  } @else if $top == xl {
+    margin-top: var(--space-xl);
+  } @else if $top == xxl {
+    margin-top: var(--space-xxl);
+  } @else {
+    margin-top: $top;
+  }
+  @if $right == xxs {
+    margin-right: var(--space-xxs);
+  } @else if $right == xs {
+    margin-right: var(--space-xs);
+  } @else if $right == s {
+    margin-right: var(--space-s);
+  } @else if $right == m {
+    margin-right: var(--space-m);
+  } @else if $right == l {
+    margin-right: var(--space-l);
+  } @else if $right == xl {
+    margin-right: var(--space-xl);
+  } @else if $right == xxl {
+    margin-right: var(--space-xxl);
+  } @else {
+    margin-right: $right;
+  }
+  @if $bottom == xxs {
+    margin-bottom: var(--space-xxs);
+  } @else if $bottom == xs {
+    margin-bottom: var(--space-xs);
+  } @else if $bottom == s {
+    margin-bottom: var(--space-s);
+  } @else if $bottom == m {
+    margin-bottom: var(--space-m);
+  } @else if $bottom == l {
+    margin-bottom: var(--space-l);
+  } @else if $bottom == xl {
+    margin-bottom: var(--space-xl);
+  } @else if $bottom == xxl {
+    margin-bottom: var(--space-xxl);
+  } @else {
+    margin-bottom: $bottom;
+  }
+  @if $left == xxs {
+    margin-left: var(--space-xxs);
+  } @else if $left == xs {
+    margin-left: var(--space-xs);
+  } @else if $left == s {
+    margin-left: var(--space-s);
+  } @else if $left == m {
+    margin-left: var(--space-m);
+  } @else if $left == l {
+    margin-left: var(--space-l);
+  } @else if $left == xl {
+    margin-left: var(--space-xl);
+  } @else if $left == xxl {
+    margin-left: var(--space-xxl);
+  } @else {
+    margin-left: $left;
+  }
+}
+
+@mixin font-xxs {
+  font-family: var(--font-family-xxs);
+  font-size: var(--font-size-xxs);
+  font-weight: var(--font-weight-xxs);
+}
+@mixin font-xs {
+  font-family: var(--font-family-xs);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-xs);
+}
+@mixin font-s {
+  font-family: var(--font-family-s);
+  font-size: var(--font-size-s);
+  font-weight: var(--font-weight-s);
+}
+@mixin font-m {
+  font-family: var(--font-family-m);
+  font-size: var(--font-size-m);
+  font-weight: var(--font-weight-m);
+}
+@mixin font-l {
+  font-family: var(--font-family-l);
+  font-size: var(--font-size-l);
+  font-weight: var(--font-weight-l);
+}
+@mixin font-xl {
+  font-family: var(--font-family-xl);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-xl);
+}
+@mixin font-xxl {
+  font-family: var(--font-family-xxl);
+  font-size: var(--font-size-xxl);
+  font-weight: var(--font-weight-xxl);
+}
+@mixin font-xxxl {
+  font-family: var(--font-family-xxxl);
+  font-size: var(--font-size-xxxl);
+  font-weight: var(--font-weight-xxxl);
+}
+@mixin font-xxxxl {
+  font-family: var(--font-family-xxxxl);
+  font-size: var(--font-size-xxxxl);
+  font-weight: var(--font-weight-xxxxl);
+}
+@mixin font-xxxxxl {
+  font-family: var(--font-family-xxxxxl);
+  font-size: var(--font-size-xxxxxl);
+  font-weight: var(--font-weight-xxxxxl);
+}
+@mixin font-xxxxxxl {
+  font-family: var(--font-family-xxxxxxl);
+  font-size: var(--font-size-xxxxxxl);
+  font-weight: var(--font-weight-xxxxxxl);
+}
+@mixin font-xxxxxxxl {
+  font-family: var(--font-family-xxxxxxxl);
+  font-size: var(--font-size-xxxxxxxl);
+  font-weight: var(--font-weight-xxxxxxxl);
+}

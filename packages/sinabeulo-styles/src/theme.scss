@@ -1,0 +1,268 @@
+:root {
+  --space-xxs: 4px;
+  --space-xs: 8px;
+  --space-s: 12px;
+  --space-m: 16px;
+  --space-l: 20px;
+  --space-xl: 24px;
+  --space-xxl: 28px;
+
+  --font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', sans-serif;
+  --font-weight-normal: 400;
+  --font-weight-bold: 600;
+  --font-family-xxs: var(--font-family);
+  --font-family-xs: var(--font-family);
+  --font-family-s: var(--font-family);
+  --font-family-m: var(--font-family);
+  --font-family-l: var(--font-family);
+  --font-family-xl: var(--font-family);
+  --font-family-xxl: var(--font-family);
+  --font-family-xxxl: var(--font-family);
+  --font-family-xxxxl: var(--font-family);
+  --font-family-xxxxxl: var(--font-family);
+  --font-size-xxs: 10px;
+  --font-size-xs: 10px;
+  --font-size-s: 12px;
+  --font-size-m: 14px;
+  --font-size-l: 16px;
+  --font-size-xl: 18px;
+  --font-size-xxl: 20px;
+  --font-size-xxxl: 24px;
+  --font-size-xxxxl: 28px;
+  --font-size-xxxxxl: 32px;
+  --font-weight-xxs: var(--font-weight-normal);
+  --font-weight-xs: var(--font-weight-normal);
+  --font-weight-s: var(--font-weight-normal);
+  --font-weight-m: var(--font-weight-normal);
+  --font-weight-l: var(--font-weight-normal);
+  --font-weight-xl: var(--font-weight-normal);
+  --font-weight-xxl: var(--font-weight-bold);
+  --font-weight-xxxl: var(--font-weight-bold);
+  --font-weight-xxxxl: var(--font-weight-bold);
+  --font-weight-xxxxxl: var(--font-weight-bold);
+
+  --themeDarker: #005a3f;
+  --themeDark: #007a55;
+  --themeDarkAlt: #009165;
+  --themePrimary: #00a170;
+  --themeSecondary: #15ac7f;
+  --themeTertiary: #4fc6a3;
+  --themeLight: #9fe3ce;
+  --themeLighter: #caf0e4;
+  --themeLighterAlt: #f1fbf8;
+  --neutralLighterAlt: #faf9f8;
+  --neutralLighter: #f3f2f1;
+  --neutralLight: #edebe9;
+  --neutralQuaternaryAlt: #e1dfdd;
+  --neutralQuaternary: #d0d0d0;
+  --neutralTertiaryAlt: #c8c6c4;
+  --neutralTertiary: #a19f9d;
+  --neutralSecondaryAlt: #8a8886;
+  --neutralSecondary: #605e5c;
+  --neutralPrimaryAlt: #3b3a39;
+  --neutralPrimary: #323130;
+  --neutralDark: #201f1e;
+  --black: #000000;
+  --white: #ffffff;
+
+  --buttonBackground: var(--white);
+  --buttonBackgroundHovered: var(--neutralLighter);
+  --buttonBackgroundPressed: var(--neutralLight);
+  --buttonBackgroundDisabled: var(--neutralLighterAlt);
+
+  --buttonBackgroundChecked: var(--neutralLight);
+  --buttonBackgroundCheckedHovered: var(--neutralLighter);
+  --buttonBackgroundCheckedPressed: var(--neutralLighter);
+  --buttonBackgroundCheckedDisabled: var(--neutralLight);
+
+  --buttonBorder: var(--neutralTertiary);
+  --buttonBorderDisabled: var(--neutralLighter);
+  --buttonBorderCheckedDisabled: var(--neutralTertiaryAlt);
+
+  --buttonText: var(--neutralPrimaryAlt);
+  --buttonTextHovered: var(--neutralDark);
+  --buttonTextPressed: var(--neutralDark);
+  --buttonTextDisabled: var(--neutralTertiaryAlt);
+
+  --buttonTextChecked: var(--neutralDark);
+  --buttonTextCheckedHovered: var(--black);
+
+  --primaryButtonBackground: var(--themePrimary);
+  --primaryButtonBackgroundDisabled: var(--neutralLighter);
+  --primaryButtonBackgroundHovered: var(--themeDarkAlt);
+  --primaryButtonBackgroundPressed: var(--themeDark);
+  --primaryButtonBorder: transparent;
+  --primaryButtonText: var(--white);
+  --primaryButtonTextDisabled: var(--neutralQuaternary);
+  --primaryButtonTextHovered: var(--white);
+  --primaryButtonTextPressed: var(--white);
+}
+
+// :root {
+// --box-shadow-04: 0 1.6px 3.6px 0 rgba(0, 0, 0, 0.132), 0 0.3px 0.9px 0 rgba(0, 0, 0, 0.108);
+// --box-shadow-08: 0 3.2px 7.2px 0 rgba(0, 0, 0, 0.132), 0 0.6px 1.8px 0 rgba(0, 0, 0, 0.108);
+// --box-shadow-16: 0 6.4px 14.4px 0 rgba(0, 0, 0, 0.132), 0 1.2px 3.6px 0 rgba(0, 0, 0, 0.108);
+
+// --space-xxs: 4px;
+// --space-xs: 8px;
+// --space-s: 12px;
+// --space-m: 16px;
+// --space-l: 20px;
+// --space-xl: 24px;
+// --space-xxl: 28px;
+
+// --font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', sans-serif;
+// --font-weight-normal: 400;
+// --font-weight-bold: 600;
+// --font-family-xxs: var(--font-family);
+// --font-family-xs: var(--font-family);
+// --font-family-s: var(--font-family);
+// --font-family-m: var(--font-family);
+// --font-family-l: var(--font-family);
+// --font-family-xl: var(--font-family);
+// --font-family-xxl: var(--font-family);
+// --font-family-xxxl: var(--font-family);
+// --font-family-xxxxl: var(--font-family);
+// --font-family-xxxxxl: var(--font-family);
+// --font-size-xxs: 10px;
+// --font-size-xs: 10px;
+// --font-size-s: 12px;
+// --font-size-m: 14px;
+// --font-size-l: 16px;
+// --font-size-xl: 18px;
+// --font-size-xxl: 20px;
+// --font-size-xxxl: 24px;
+// --font-size-xxxxl: 28px;
+// --font-size-xxxxxl: 32px;
+// --font-weight-xxs: var(--font-weight-normal);
+// --font-weight-xs: var(--font-weight-normal);
+// --font-weight-s: var(--font-weight-normal);
+// --font-weight-m: var(--font-weight-normal);
+// --font-weight-l: var(--font-weight-normal);
+// --font-weight-xl: var(--font-weight-normal);
+// --font-weight-xxl: var(--font-weight-bold);
+// --font-weight-xxxl: var(--font-weight-bold);
+// --font-weight-xxxxl: var(--font-weight-bold);
+// --font-weight-xxxxxl: var(--font-weight-bold);
+
+// --accent: #0078d4;
+// --theme-dark: #005a9e;
+// --theme-darker: #004578;
+// --theme-dark-alt: #106ebe;
+
+// --theme-light: #c7e0f4;
+// --theme-lighter: #deecf9;
+// --theme-lighter-alt: #eff6fc;
+
+// --theme-primary: #0078d4;
+// --theme-secondary: #2b88d8;
+// --theme-tertiary: #71afe5;
+
+// --neutral-dark: #201f1e;
+// --neutral-light: #edebe9;
+// --neutral-lighter: #f3f2f1;
+// --neutral-lighter-alt: #faf9f8;
+
+// --neutral-primary: #323130;
+// --neutral-primary-alt: #3b3a39;
+// --neutral-secondary: #605e5c;
+// --neutral-secondary-alt: #8a8886;
+// --neutral-tertiary: #a19f9d;
+// --neutral-tertiary-alt: #c8c6c4;
+// --neutral-quaternary: #d2d0ce;
+// --neutral-quaternary-alt: #e1dfdd;
+
+// --black: #000000;
+// --white: #ffffff;
+// --blue: #0078d4;
+// --blue-dark: #002050;
+// --blue-light: #00bcf2;
+// --blue-mid: #00188f;
+// --green: #107c10;
+// --green-dark: #004b1c;
+// --green-light: #bad80a;
+// --magenta: #b4009e;
+// --magenta-dark: #5c005c;
+// --magenta-light: #e3008c;
+// --orange: #d83b01;
+// --orange-light: #ea4300;
+// --orange-lighter: #ff8c00;
+// --purple: #5c2d91;
+// --purple-dark: #32145a;
+// --purple-light: #b4a0ff;
+// --red: #e81123;
+// --red-dark: #a4262c;
+// --teal: #008272;
+// --teal-dark: #004b50;
+// --teal-light: #00b294;
+// --yellow: #ffb900;
+// --yellow-dark: #d29200;
+// --yellow-light: #fff100;
+
+// --button-background: var(--white);
+// --button-background-checked: var(--neutral-tertiary-alt);
+// --button-background-checked-hovered: var(--neutral-tertiary-alt);
+// --button-background-disabled: var(--neutral-lighter);
+// --button-background-hovered: var(--neutral-lighter);
+// --button-background-pressed: var(--neutral-light);
+// --button-border: var(--neutral-secondary-alt);
+// --button-border-disabled: var(--neutral-lighter);
+// --button-text: var(--neutral-primary);
+// --button-text-checked: var(--neutral-dark);
+// --button-text-checked-hovered: var(--neutral-dark);
+// --button-text-disabled: var(--neutral-tertiary);
+// --button-text-hovered: var(--neutral-dark);
+// --button-text-pressed: var(--neutral-dark);
+
+// --themePrimary: #00a170;
+// --themeSecondary: #15ac7f;
+// --themeTertiary: #4fc6a3;
+
+// --themeLighterAlt: #f1fbf8;
+// --themeLighter: #caf0e4;
+// --themeLight: #9fe3ce;
+
+// --themeDarker: #005a3f;
+// --themeDark: #007a55;
+// --themeDarkAlt: #009165;
+
+// --neutralLighterAlt: #f8f8f8;
+// --neutralLighter: #f4f4f4;
+// --neutralLight: #eaeaea;
+// --neutralDark: #605e5d;
+
+// --neutralPrimary: #323130;
+// --neutralPrimaryAlt: #8d8b8a;
+// --neutralSecondary: #a3a2a0;
+// --neutralTertiary: #bab8b7;
+// --neutralTertiaryAlt: #c8c8c8;
+// --neutralQuaternary: #d0d0d0;
+// --neutralQuaternaryAlt: #dadada;
+
+// --black: #494847;
+// --white: #ffffff;
+
+// --background: var(--white);
+// --background-hover: var(--neutral-lighter);
+// --background-press: var(--neutral-light;
+// --background-checked: var(--neutral-tertiary-alt);
+// --background-checked-hover: var(--neutral-tertiary);
+// --background-checked-press: var(--neutral-tertiary);
+// --background-disabled: var(--neutral-lighter);
+
+// --text: #fff;
+// --text-hover: #fff;
+// --text-press: #fff;
+// --text-checked: #fff;
+// --text-checked-hover: #fff;
+// --text-checked-press: #fff;
+// --text-disabled: #fff;
+
+// --border: #fff;
+// --border-hover: #fff;
+// --border-press: #fff;
+// --border-checked: #fff;
+// --border-checked-hover: #fff;
+// --border-checked-press: #fff;
+// --border-disabled: #fff;
+// }

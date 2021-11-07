@@ -1,0 +1,66 @@
+@import '../../mixin.scss';
+
+.root {
+  @include font-m();
+  display: flex;
+  font-family: var(--font-family-m);
+  font-size: var(--font-size-m);
+  font-weight: var(--font-weight-m);
+  position: relative;
+}
+
+.input {
+  position: absolute;
+  background: none;
+  opacity: 0;
+}
+
+.label {
+  align-items: flex-start;
+  cursor: pointer;
+  display: flex;
+  position: relative;
+  user-select: none;
+
+  .checkbox {
+    position: relative;
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    height: 20px;
+    width: 20px;
+    border: 1px solid #323130;
+    border-radius: 2px;
+    box-sizing: border-box;
+    transition-property: background, border, border-color 200ms cubic-bezier(0.4, 0, 0.23, 1);
+    overflow: hidden;
+    margin-right: 4px;
+    line-height: 20px;
+
+    i {
+      // color: var(--white);
+      display: flex;
+      svg {
+        width: 1em;
+        height: 1em;
+        fill: none;
+        stroke: currentColor;
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+    }
+  }
+  .text {
+    color: #323130;
+    font-size: 14px;
+    margin-left: 4px;
+  }
+}
+
+.checked {
+}
+
+.disabled {
+}
