@@ -64,38 +64,6 @@
   --neutralDark: #201f1e;
   --black: #000000;
   --white: #ffffff;
-
-  --buttonBackground: var(--white);
-  --buttonBackgroundHovered: var(--neutralLighter);
-  --buttonBackgroundPressed: var(--neutralLight);
-  --buttonBackgroundDisabled: var(--neutralLighterAlt);
-
-  --buttonBackgroundChecked: var(--neutralLight);
-  --buttonBackgroundCheckedHovered: var(--neutralLighter);
-  --buttonBackgroundCheckedPressed: var(--neutralLighter);
-  --buttonBackgroundCheckedDisabled: var(--neutralLight);
-
-  --buttonBorder: var(--neutralTertiary);
-  --buttonBorderDisabled: var(--neutralLighter);
-  --buttonBorderCheckedDisabled: var(--neutralTertiaryAlt);
-
-  --buttonText: var(--neutralPrimaryAlt);
-  --buttonTextHovered: var(--neutralDark);
-  --buttonTextPressed: var(--neutralDark);
-  --buttonTextDisabled: var(--neutralTertiaryAlt);
-
-  --buttonTextChecked: var(--neutralDark);
-  --buttonTextCheckedHovered: var(--black);
-
-  --primaryButtonBackground: var(--themePrimary);
-  --primaryButtonBackgroundDisabled: var(--neutralLighter);
-  --primaryButtonBackgroundHovered: var(--themeDarkAlt);
-  --primaryButtonBackgroundPressed: var(--themeDark);
-  --primaryButtonBorder: transparent;
-  --primaryButtonText: var(--white);
-  --primaryButtonTextDisabled: var(--neutralQuaternary);
-  --primaryButtonTextHovered: var(--white);
-  --primaryButtonTextPressed: var(--white);
 }
 
 // :root {

@@ -28,12 +28,12 @@ describe('Button', () => {
   test('Primary style button.', () => {
     render(<Button primary>Primary</Button>, { container });
     expect(container.querySelector('button')).toHaveClass(
-      buttonClassNames.rootPrimary
+      buttonClassNames.primary
     );
 
     render(<Button>Standard</Button>, { container });
     expect(container.querySelector('button')).not.toHaveClass(
-      buttonClassNames.rootPrimary
+      buttonClassNames.primary
     );
   });
 
@@ -45,7 +45,7 @@ describe('Button', () => {
       { container }
     );
     expect(container.querySelector('button')).toHaveClass(
-      buttonClassNames.rootPrimary
+      buttonClassNames.primary
     );
     expect(container.querySelector('button')).toHaveClass(
       buttonClassNames.checked
@@ -53,7 +53,7 @@ describe('Button', () => {
 
     render(<Button>Standard</Button>, { container });
     expect(container.querySelector('button')).not.toHaveClass(
-      buttonClassNames.rootPrimary
+      buttonClassNames.primary
     );
     expect(container.querySelector('button')).not.toHaveClass(
       buttonClassNames.checked
@@ -68,13 +68,13 @@ describe('Button', () => {
       { container }
     );
     expect(container.querySelector('button')).toHaveClass(
-      buttonClassNames.rootPrimary
+      buttonClassNames.primary
     );
     expect(container.querySelector('button')).toBeDisabled();
 
     render(<Button>Standard</Button>, { container });
     expect(container.querySelector('button')).not.toHaveClass(
-      buttonClassNames.rootPrimary
+      buttonClassNames.primary
     );
     expect(container.querySelector('button')).not.toBeDisabled();
   });

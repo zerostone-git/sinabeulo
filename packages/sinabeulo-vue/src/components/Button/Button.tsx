@@ -67,12 +67,10 @@ const Button = defineComponent({
       <button
         type="button"
         ref="refButton"
-        class={createClassName(
-          this.primary ? this.cn.rootPrimary : this.cn.root,
-          {
-            [this.cn.checked]: this.checked,
-          }
-        )}
+        class={createClassName(this.cn.root, {
+          [this.cn.checked]: this.checked,
+          [this.cn.primary]: this.primary,
+        })}
         disabled={this.disabled}
         onClick={(event) => this.handleClick(event)}
       >

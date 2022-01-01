@@ -1,11 +1,11 @@
 type CheckboxClassNames = {
   root: string;
-  input: string;
-  label: string;
-  checkbox: string;
-  text: string;
   checked: string;
   disabled: string;
+  input: string;
+  container: string;
+  icon: string;
+  text: string;
 };
 
 declare const checkboxClassNames: CheckboxClassNames;

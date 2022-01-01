@@ -34,7 +34,7 @@ describe('Button', () => {
       },
     });
     expect(wrapper.find('button').element).toHaveClass(
-      buttonClassNames.rootPrimary
+      buttonClassNames.primary
     );
     wrapper.unmount();
 
@@ -44,7 +44,7 @@ describe('Button', () => {
       },
     });
     expect(wrapper.find('button').element).not.toHaveClass(
-      buttonClassNames.rootPrimary
+      buttonClassNames.primary
     );
     wrapper.unmount();
   });
@@ -60,7 +60,7 @@ describe('Button', () => {
       },
     });
     expect(wrapper.find('button').element).toHaveClass(
-      buttonClassNames.rootPrimary
+      buttonClassNames.primary
     );
     expect(wrapper.find('button').element).toHaveClass(
       buttonClassNames.checked
@@ -73,7 +73,7 @@ describe('Button', () => {
       },
     });
     expect(wrapper.find('button').element).not.toHaveClass(
-      buttonClassNames.rootPrimary
+      buttonClassNames.primary
     );
     expect(wrapper.find('button').element).not.toHaveClass(
       buttonClassNames.checked
@@ -92,7 +92,7 @@ describe('Button', () => {
       },
     });
     expect(wrapper.find('button').element).toHaveClass(
-      buttonClassNames.rootPrimary
+      buttonClassNames.primary
     );
     expect(wrapper.find('button').element).toBeDisabled();
     wrapper.unmount();
@@ -103,7 +103,7 @@ describe('Button', () => {
       },
     });
     expect(wrapper.find('button').element).not.toHaveClass(
-      buttonClassNames.rootPrimary
+      buttonClassNames.primary
     );
     expect(wrapper.find('button').element).not.toBeDisabled();
     wrapper.unmount();

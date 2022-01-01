@@ -72,7 +72,8 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       <button
         type="button"
         ref={refButton}
-        className={createClassName(primary ? cn.rootPrimary : cn.root, {
+        className={createClassName(cn.root, {
+          [cn.primary]: primary,
           [cn.checked]: checked,
         })}
         disabled={disabled}

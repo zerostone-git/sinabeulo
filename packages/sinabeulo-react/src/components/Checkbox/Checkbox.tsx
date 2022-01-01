@@ -79,8 +79,8 @@ const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
           checked={isChecked}
           onChange={handleChange}
         />
-        <label className={cn.label} htmlFor={id}>
-          <div className={cn.checkbox}>
+        <label className={cn.container} htmlFor={id}>
+          <div className={cn.icon}>
             <i
               data-icon-name="CheckMark"
               aria-hidden="true"
