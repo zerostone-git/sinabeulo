@@ -40,6 +40,11 @@ module.exports = function (env, args) {
                 modules: {
                   mode: 'local',
                   exportLocalsConvention: 'camelCase',
+                  ...(isProduction
+                    ? {}
+                    : {
+                        localIdentName: '[name]__[local]--[hash:base64:5]',
+                      }),
                 },
                 importLoaders: 1,
               },
