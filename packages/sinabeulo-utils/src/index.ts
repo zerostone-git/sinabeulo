@@ -1,3 +1,4 @@
-console.log('index');
+import composeClassNames from './composeClassNames';
+import createClassName from './createClassName';
 
-export {};
+export { composeClassNames, createClassName };
