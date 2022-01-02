@@ -1,10 +1,12 @@
 const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = function (env, args) {
-  const isProduction = env.production;
+  const isServe = env.WEBPACK_SERVE;
+  const isProduction = env.production && !isServe;
   const config = {
     mode: isProduction ? 'production' : 'development',
     target: 'web',
@@ -82,6 +84,22 @@ module.exports = function (env, args) {
     },
     ...(isProduction ? {} : { devtool: 'source-map' }),
   };
+
+  if (isServe) {
+    config.entry.index = path.resolve(__dirname, 'src', 'preview', 'index.ts');
+    config.devtool = 'eval';
+    config.devServer = {
+      hot: true,
+      port: 8080,
+    };
+    config.plugins.push(
+      new HtmlWebpackPlugin({
+        title: 'sinabeulo',
+      })
+    );
+    delete config.externals;
+    delete config.optimization;
+  }
 
   return config;
 };
