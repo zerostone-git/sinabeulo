@@ -1,4 +1,4 @@
-import { buttonClassNames, checkboxClassNames } from '..';
+import { buttonClassNames, checkboxClassNames, radioClassNames } from '..';
 
 const Button = `<div>
 <button class="${buttonClassNames.root}" type="button">
@@ -134,3 +134,51 @@ const Checkbox = `<div>
 const checkboxes = document.createElement('div');
 checkboxes.innerHTML = Checkbox;
 document.body.appendChild(checkboxes);
+
+const Radio = `<div>
+<div>
+  <div class="${radioClassNames.root}">
+    <input class="${radioClassNames.input}" type="radio" id="radio-1">
+    <label class="${radioClassNames.container}" for="radio-1">
+      <span class="${radioClassNames.icon}">
+        &#xf111;
+      </span>
+      <span class="${radioClassNames.text}">Unchecked</span>
+    </label>
+  </div>
+  <div class="${radioClassNames.root} ${radioClassNames.checked}">
+    <input class="${radioClassNames.input}" type="radio" id="radio-2">
+    <label class="${radioClassNames.container}" for="radio-2">
+      <span class="${radioClassNames.icon}">
+        &#xf111;
+      </span>
+      <span class="${radioClassNames.text}">Checked</span>
+    </label>
+  </div>
+</div>
+<br />
+<div>
+  <div class="${radioClassNames.root} ${radioClassNames.disabled}">
+    <input class="${radioClassNames.input}" type="radio" id="radio-3">
+    <label class="${radioClassNames.container}" for="radio-3">
+      <span class="${radioClassNames.icon}">
+        &#xf111;
+      </span>
+      <span class="${radioClassNames.text}">Unchecked</span>
+    </label>
+  </div>
+  <div class="${radioClassNames.root} ${radioClassNames.checked} ${radioClassNames.disabled}">
+    <input class="${radioClassNames.input}" type="radio" id="radio-4">
+    <label class="${radioClassNames.container}" for="radio-4">
+      <span class="${radioClassNames.icon}">
+        &#xf111;
+      </span>
+      <span class="${radioClassNames.text}">Checked</span>
+    </label>
+  </div>
+</div>
+</div><br />`;
+
+const radios = document.createElement('div');
+radios.innerHTML = Radio;
+document.body.appendChild(radios);

@@ -11,11 +11,18 @@ import {
   CheckboxClassNames,
   classNamesForCheckbox,
 } from './components/Checkbox';
+import {
+  radioClassNames,
+  RadioClassNames,
+  classNamesForRadio,
+} from './components/Radio';
 
 export {
   classNamesForButton,
   classNamesForCheckbox,
+  classNamesForRadio,
   buttonClassNames,
   checkboxClassNames,
+  radioClassNames,
 };
-export type { ButtonClassNames, CheckboxClassNames };
+export type { ButtonClassNames, CheckboxClassNames, RadioClassNames };
