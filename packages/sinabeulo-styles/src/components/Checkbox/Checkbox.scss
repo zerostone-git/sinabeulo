@@ -1,0 +1,139 @@
+.root {
+  --checkboxIconBackground: var(--white);
+  --checkboxIconBackgroundHovered: var(--white);
+  --checkboxIconBackgroundPressed: var(--white);
+  --checkboxIconBackgroundDisabled: var(--neutralLighterAlt);
+
+  --checkboxIconBorder: var(--neutralPrimaryAlt);
+  --checkboxIconBorderHovered: var(--neutralPrimaryAlt);
+  --checkboxIconBorderPressed: var(--neutralPrimaryAlt);
+  --checkboxIconBorderDisabled: var(--neutralQuaternary);
+
+  --checkboxIconText: transparent;
+  --checkboxIconTextHovered: var(--neutralPrimaryAlt);
+  --checkboxIconTextPressed: var(--neutralPrimaryAlt);
+  --checkboxIconTextDisabled: transparent;
+
+  --checkboxTextText: var(--neutralPrimaryAlt);
+  --checkboxTextTextHovered: var(--neutralPrimaryAlt);
+  --checkboxTextTextPressed: var(--neutralPrimaryAlt);
+  --checkboxTextTextDisabled: var(--neutralQuaternary);
+
+  box-sizing: border-box;
+  display: inline-block;
+  font-family: var(--font-family-m);
+  font-size: var(--font-size-m);
+  font-weight: var(--font-weight-m);
+  position: relative;
+
+  :hover {
+    .icon {
+      background-color: var(--checkboxIconBackgroundHovered);
+      border: 1px solid var(--checkboxIconBorderHovered);
+      color: var(--checkboxIconTextHovered);
+    }
+    .text {
+      color: var(--checkboxTextTextHovered);
+    }
+  }
+  :active {
+    .icon {
+      background-color: var(--checkboxIconBackgroundPressed);
+      border: 1px solid var(--checkboxIconBorderPressed);
+      color: var(--checkboxIconTextPressed);
+    }
+    .text {
+      color: var(--checkboxTextTextPressed);
+    }
+  }
+  &.disabled {
+    .container {
+      cursor: default;
+    }
+    .icon {
+      background-color: var(--checkboxIconBackgroundDisabled);
+      border: 1px solid var(--checkboxIconBorderDisabled);
+      color: var(--checkboxIconTextDisabled);
+    }
+    .text {
+      color: var(--checkboxTextTextDisabled);
+    }
+  }
+  * {
+    box-sizing: border-box;
+  }
+}
+
+.checked {
+  --checkboxIconBackground: var(--themePrimary);
+  --checkboxIconBackgroundHovered: var(--themeDarkAlt);
+  --checkboxIconBackgroundPressed: var(--themeDark);
+  --checkboxIconBackgroundDisabled: var(--neutralTertiaryAlt);
+
+  --checkboxIconBorder: var(--themePrimary);
+  --checkboxIconBorderHovered: var(--themeDarkAlt);
+  --checkboxIconBorderPressed: var(--themeDark);
+  --checkboxIconBorderDisabled: var(--neutralTertiaryAlt);
+
+  --checkboxIconText: var(--white);
+  --checkboxIconTextHovered: var(--white);
+  --checkboxIconTextPressed: var(--white);
+  --checkboxIconTextDisabled: var(--white);
+}
+
+.indeterminate {
+  --checkboxIconBackground: var(--white);
+  --checkboxIconBackgroundHovered: var(--white);
+  --checkboxIconBackgroundPressed: var(--white);
+  --checkboxIconBackgroundDisabled: var(--neutralLighterAlt);
+
+  --checkboxIconBorder: var(--themePrimary);
+  --checkboxIconBorderHovered: var(--themeDarkAlt);
+  --checkboxIconBorderPressed: var(--themeDark);
+  --checkboxIconBorderDisabled: var(--neutralQuaternary);
+
+  --checkboxIconText: var(--themePrimary);
+  --checkboxIconTextHovered: var(--themeDarkAlt);
+  --checkboxIconTextPressed: var(--themeDark);
+  --checkboxIconTextDisabled: var(--neutralQuaternary);
+}
+
+.input {
+  background: none;
+  opacity: 0;
+  position: absolute;
+}
+
+.container {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  gap: var(--space-xxs);
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.icon {
+  align-items: center;
+  background-color: var(--checkboxIconBackground);
+  border: 1px solid var(--checkboxIconBorder);
+  border-radius: 2px;
+  color: var(--checkboxIconText);
+  display: flex;
+  font-family: 'Font Awesome 5 Free';
+  font-size: 11px;
+  font-weight: 900;
+  height: 20px;
+  justify-content: center;
+  line-height: 18px;
+  overflow: hidden;
+  width: 20px;
+}
+
+.text {
+  color: var(--checkboxTextText);
+  display: block;
+  line-height: 20px;
+  margin-right: var(--space-xxs);
+}

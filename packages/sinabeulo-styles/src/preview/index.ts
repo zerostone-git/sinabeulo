@@ -1,4 +1,4 @@
-import { buttonClassNames } from '..';
+import { buttonClassNames, checkboxClassNames } from '..';
 
 const Button = `<div>
 <button class="${buttonClassNames.root}" type="button">
@@ -68,3 +68,69 @@ const CheckedButton = `<div>
 const buttons = document.createElement('div');
 buttons.innerHTML = Button + PrimaryButton + IconButton + CheckedButton;
 document.body.appendChild(buttons);
+
+const Checkbox = `<div>
+<div>
+  <div class="${checkboxClassNames.root}">
+    <input class="${checkboxClassNames.input}" type="checkbox" id="checkbox-1">
+    <label class="${checkboxClassNames.container}" for="checkbox-1">
+      <span class="${checkboxClassNames.icon}">
+        &#xf00c;
+      </span>
+      <span class="${checkboxClassNames.text}">Unchecked</span>
+    </label>
+  </div>
+  <div class="${checkboxClassNames.root} ${checkboxClassNames.checked}">
+    <input class="${checkboxClassNames.input}" type="checkbox" id="checkbox-2">
+    <label class="${checkboxClassNames.container}" for="checkbox-2">
+      <span class="${checkboxClassNames.icon}">
+        &#xf00c;
+      </span>
+      <span class="${checkboxClassNames.text}">Checked</span>
+    </label>
+  </div>
+  <div class="${checkboxClassNames.root} ${checkboxClassNames.indeterminate}">
+    <input class="${checkboxClassNames.input}" type="checkbox" id="checkbox-2">
+    <label class="${checkboxClassNames.container}" for="checkbox-2">
+      <span class="${checkboxClassNames.icon}">
+        &#xf0c8;
+      </span>
+      <span class="${checkboxClassNames.text}">Indeterminate</span>
+    </label>
+  </div>
+</div>
+<br />
+<div>
+  <div class="${checkboxClassNames.root} ${checkboxClassNames.disabled}">
+    <input class="${checkboxClassNames.input}" type="checkbox" id="checkbox-3">
+    <label class="${checkboxClassNames.container}" for="checkbox-3">
+      <span class="${checkboxClassNames.icon}">
+        &#xf00c;
+      </span>
+      <span class="${checkboxClassNames.text}">Unchecked</span>
+    </label>
+  </div>
+  <div class="${checkboxClassNames.root} ${checkboxClassNames.checked} ${checkboxClassNames.disabled}">
+    <input class="${checkboxClassNames.input}" type="checkbox" id="checkbox-4">
+    <label class="${checkboxClassNames.container}" for="checkbox-4">
+      <span class="${checkboxClassNames.icon}">
+        &#xf00c;
+      </span>
+      <span class="${checkboxClassNames.text}">Checked</span>
+    </label>
+  </div>
+  <div class="${checkboxClassNames.root} ${checkboxClassNames.indeterminate} ${checkboxClassNames.disabled}">
+    <input class="${checkboxClassNames.input}" type="checkbox" id="checkbox-4">
+    <label class="${checkboxClassNames.container}" for="checkbox-4">
+      <span class="${checkboxClassNames.icon}">
+        &#xf0c8;
+      </span>
+      <span class="${checkboxClassNames.text}">Indeterminate</span>
+    </label>
+  </div>
+  </div>
+</div><br />`;
+
+const checkboxes = document.createElement('div');
+checkboxes.innerHTML = Checkbox;
+document.body.appendChild(checkboxes);
