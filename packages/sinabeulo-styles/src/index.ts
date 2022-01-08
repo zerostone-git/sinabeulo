@@ -1,3 +1,9 @@
-console.log('index');
+import './theme.scss';
+import {
+  buttonClassNames,
+  ButtonClassNames,
+  classNamesForButton,
+} from './components/Button';
 
-export {};
+export { classNamesForButton, buttonClassNames };
+export type { ButtonClassNames };
