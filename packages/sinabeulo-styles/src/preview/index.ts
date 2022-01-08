@@ -1,4 +1,11 @@
-import { buttonClassNames, checkboxClassNames, radioClassNames } from '..';
+import {
+  buttonClassNames,
+  checkboxClassNames,
+  layerClassNames,
+  radioClassNames,
+  selectClassNames,
+  selectItemsClassNames,
+} from '..';
 
 const Button = `<div>
 <button class="${buttonClassNames.root}" type="button">
@@ -182,3 +189,105 @@ const Radio = `<div>
 const radios = document.createElement('div');
 radios.innerHTML = Radio;
 document.body.appendChild(radios);
+
+const Select = `<div>
+<div>
+  <div style="width: 200px"
+    role="combobox"
+    aria-expanded="false"
+    class="${selectClassNames.root}"
+  >
+    <span class="${selectClassNames.container}">
+      <span class="${selectClassNames.text}">Selected Text, Selected Text, Selected Text</span>
+      <span class="${selectClassNames.icon}">&#xf078;</span>
+    </span>
+  </div>
+</div>
+<br />
+<div>
+  <div style="width: 200px"
+    role="combobox"
+    aria-expanded="false"
+    class="${selectClassNames.root} ${selectClassNames.disabled}"
+  >
+    <span class="${selectClassNames.container}">
+      <span class="${selectClassNames.text}">Selected Text, Selected Text, Selected Text</span>
+      <span class="${selectClassNames.icon}">&#xf078;</span>
+    </span>
+  </div>
+</div>
+<br />
+</div><br />`;
+
+const selectes = document.createElement('div');
+selectes.innerHTML = Select;
+document.body.appendChild(selectes);
+
+const SelectItems = `
+<div class="${layerClassNames.root}">
+  <div class="${layerClassNames.wrapper}">
+    <div class="${layerClassNames.container}">
+      <div class="${layerClassNames.content}" style="top: 220px; left: 350px; width: 200px;">
+        <div class="${selectItemsClassNames.root}" role="listbox">
+          <div role="group">
+            <div class="${selectItemsClassNames.header}">
+              <span>Buttons</span>
+            </div>
+            <button class="${buttonClassNames.root} ${selectItemsClassNames.item}" type="button">
+              <span class="${buttonClassNames.container} ${selectItemsClassNames.itemContainer}">
+                <span class="${buttonClassNames.text}">Standard</span>
+              </span>
+            </button>
+            <button class="${buttonClassNames.root} ${buttonClassNames.disabled} ${selectItemsClassNames.itemDisabled} ${selectItemsClassNames.item}" type="button">
+              <span class="${buttonClassNames.container} ${selectItemsClassNames.itemContainer}">
+                <span class="${buttonClassNames.text}">Standard</span>
+              </span>
+            </button>
+            <button class="${buttonClassNames.root} ${selectItemsClassNames.item}" type="button">
+              <span class="${buttonClassNames.container} ${selectItemsClassNames.itemContainer}">
+                <span class="${buttonClassNames.text}">Standard</span>
+              </span>
+            </button>
+            <div role="separator" class="${selectItemsClassNames.separator}"></div>
+          </div>
+          <div role="group">
+            <div class="${selectItemsClassNames.header}">
+              <span>Checkboxes</span>
+            </div>
+            <div class="${checkboxClassNames.root} ${selectItemsClassNames.item}">
+              <input class="${checkboxClassNames.input}" type="checkbox" id="checkbox-1">
+              <label class="${checkboxClassNames.container} ${selectItemsClassNames.itemContainer}" for="checkbox-1">
+                <span class="${checkboxClassNames.icon}">
+                  &#10003;
+                </span>
+                <span class="${checkboxClassNames.text}">Unchecked</span>
+              </label>
+            </div>
+            <div class="${checkboxClassNames.root} ${checkboxClassNames.disabled} ${selectItemsClassNames.itemDisabled} ${selectItemsClassNames.item}">
+              <input class="${checkboxClassNames.input}" type="checkbox" id="checkbox-1">
+              <label class="${checkboxClassNames.container} ${selectItemsClassNames.itemContainer}" for="checkbox-1">
+                <span class="${checkboxClassNames.icon}">
+                  &#10003;
+                </span>
+                <span class="${checkboxClassNames.text}">Unchecked</span>
+              </label>
+            </div>
+            <div class="${checkboxClassNames.root} ${selectItemsClassNames.item}">
+              <input class="${checkboxClassNames.input}" type="checkbox" id="checkbox-1">
+              <label class="${checkboxClassNames.container} ${selectItemsClassNames.itemContainer}" for="checkbox-1">
+                <span class="${checkboxClassNames.icon}">
+                  &#10003;
+                </span>
+                <span class="${checkboxClassNames.text}">Unchecked</span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>`;
+
+const selectItemses = document.createElement('div');
+selectItemses.innerHTML = SelectItems;
+document.body.appendChild(selectItemses);

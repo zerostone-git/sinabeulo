@@ -1,0 +1,101 @@
+.root {
+  --selectBackground: var(--white);
+  --selectBackgroundHovered: var(--white);
+  --selectBackgroundPressed: var(--white);
+  --selectBackgroundDisabled: var(--neutralLighterAlt);
+
+  --selectBorder: var(--neutralTertiary);
+  --selectBorderHovered: var(--neutralTertiary);
+  --selectBorderPressed: var(--neutralTertiary);
+  --selectBorderDisabled: var(--neutralLighter);
+
+  --selectText: var(--neutralPrimaryAlt);
+  --selectTextHovered: var(--neutralDark);
+  --selectTextPressed: var(--neutralDark);
+  --selectTextDisabled: var(--neutralTertiaryAlt);
+
+  --selectIconText: var(--neutralSecondaryAlt);
+  --selectIconTextHovered: var(--neutralSecondary);
+  --selectIconTextPressed: var(--neutralSecondary);
+  --selectIconTextDisabled: var(--neutralQuaternaryAlt);
+
+  background-color: var(--selectBackground);
+  border: 1px solid var(--selectBorder);
+  border-radius: 2px;
+  box-sizing: border-box;
+  color: var(--selectText);
+  cursor: pointer;
+  display: inline-block;
+  font-family: var(--font-family-m);
+  font-size: var(--font-size-m);
+  font-weight: var(--font-weight-m);
+  height: var(--font-size-xxxxxl);
+  line-height: calc(var(--font-size-xxxxxl) - 2px);
+  min-width: 80px;
+  outline: transparent;
+  padding: 0px var(--space-xxs);
+  position: relative;
+  text-decoration: none;
+  text-align: center;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+
+  &:hover:not(.disabled) {
+    background-color: var(--selectBackgroundHovered);
+    border-color: var(--selectBorderHovered);
+    color: var(--selectTextHovered);
+
+    .icon {
+      color: var(--selectIconTextHovered);
+    }
+  }
+  &:active:not(.disabled) {
+    background-color: var(--selectBackgroundPressed);
+    border-color: var(--selectBorderPressed);
+    color: var(--selectTextPressed);
+
+    .icon {
+      color: var(--selectIconTextPressed);
+    }
+  }
+  &.disabled {
+    background-color: var(--selectBackgroundDisabled);
+    border-color: var(--selectBorderDisabled);
+    color: var(--selectTextDisabled);
+    cursor: default;
+
+    .icon {
+      color: var(--selectIconTextDisabled);
+    }
+  }
+  * {
+    box-sizing: border-box;
+  }
+}
+
+.container {
+  align-items: center;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+
+.text {
+  display: block;
+  flex: 1;
+  margin: 0px var(--space-xxs);
+  overflow: hidden;
+  text-align: left;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.icon {
+  color: var(--selectIconText);
+  display: block;
+  flex: 0 0 14px;
+  font-family: 'Font Awesome 5 Free';
+  font-size: 11px;
+  font-weight: 900;
+}
