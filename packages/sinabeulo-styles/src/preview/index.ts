@@ -5,6 +5,7 @@ import {
   radioClassNames,
   selectClassNames,
   selectItemsClassNames,
+  textFieldClassNames,
 } from '..';
 
 const Button = `<div>
@@ -291,3 +292,111 @@ const SelectItems = `
 const selectItemses = document.createElement('div');
 selectItemses.innerHTML = SelectItems;
 document.body.appendChild(selectItemses);
+
+const TextFields = `<div>
+<div>
+  <div class="${textFieldClassNames.root}">
+    <div class="${textFieldClassNames.container}">
+      <input type="text" class="${textFieldClassNames.input}" />
+    </div>
+  </div>
+  <div class="${textFieldClassNames.root}">
+    <div class="${textFieldClassNames.container}">
+      <input type="text" class="${textFieldClassNames.input}" value="이것은 입력입니다." readonly />
+    </div>
+  </div>
+</div>
+<br />
+<div>
+  <div class="${textFieldClassNames.root} ${textFieldClassNames.hasIcon} ">
+    <div class="${textFieldClassNames.container}">
+      <input type="text" class="${textFieldClassNames.input}" />
+      <span class="${textFieldClassNames.icon}">&#xf073;</span>
+    </div>
+  </div>
+  <div class="${textFieldClassNames.root} ${textFieldClassNames.hasIcon} ">
+    <div class="${textFieldClassNames.container}">
+      <input type="text" class="${textFieldClassNames.input}" />
+      <span class="${textFieldClassNames.icon}">&#xf002;</span>
+    </div>
+  </div>
+</div>
+<br />
+<div>
+  <div class="${textFieldClassNames.root}">
+    <div class="${textFieldClassNames.container}">
+      <input type="text" class="${textFieldClassNames.input}" />
+      <button class="${buttonClassNames.root} ${textFieldClassNames.button}" type="button">
+        <span class="${buttonClassNames.container}">
+          <span class="${buttonClassNames.icon}">&#xf06e;</span>
+        </span>
+      </button>
+    </div>
+  </div>
+  <div class="${textFieldClassNames.root}">
+    <div class="${textFieldClassNames.container}">
+      <input type="text" class="${textFieldClassNames.input}" />
+      <button class="${buttonClassNames.root} ${textFieldClassNames.button}" type="button">
+        <span class="${buttonClassNames.container}">
+          <span class="${buttonClassNames.icon}">&#xf070;</span>
+        </span>
+      </button>
+    </div>
+  </div>
+</div>
+<br />
+<div>
+  <div class="${textFieldClassNames.root} ${textFieldClassNames.disabled}">
+    <div class="${textFieldClassNames.container}">
+      <input type="text" class="${textFieldClassNames.input}" />
+    </div>
+  </div>
+  <div class="${textFieldClassNames.root} ${textFieldClassNames.disabled}">
+    <div class="${textFieldClassNames.container}">
+      <input type="text" class="${textFieldClassNames.input}" value="이것은 입력입니다." readonly disabled />
+    </div>
+  </div>
+</div>
+<br />
+<div>
+  <div class="${textFieldClassNames.root} ${textFieldClassNames.hasIcon} ${textFieldClassNames.disabled} ">
+    <div class="${textFieldClassNames.container}">
+      <input type="text" class="${textFieldClassNames.input}" disabled />
+      <span class="${textFieldClassNames.icon}">&#xf073;</span>
+    </div>
+  </div>
+  <div class="${textFieldClassNames.root} ${textFieldClassNames.hasIcon} ${textFieldClassNames.disabled} ">
+    <div class="${textFieldClassNames.container}">
+      <input type="text" class="${textFieldClassNames.input}" disabled />
+      <span class="${textFieldClassNames.icon}">&#xf002;</span>
+    </div>
+  </div>
+</div>
+<br />
+<div>
+  <div class="${textFieldClassNames.root} ${textFieldClassNames.disabled}">
+    <div class="${textFieldClassNames.container}">
+      <input type="text" class="${textFieldClassNames.input}" disabled />
+      <button class="${buttonClassNames.root} ${buttonClassNames.disabled} ${textFieldClassNames.button}" type="button">
+        <span class="${buttonClassNames.container}">
+          <span class="${buttonClassNames.icon}">&#xf06e;</span>
+        </span>
+      </button>
+    </div>
+  </div>
+  <div class="${textFieldClassNames.root} ${textFieldClassNames.disabled}">
+    <div class="${textFieldClassNames.container}">
+      <input type="text" class="${textFieldClassNames.input}" disabled />
+      <button class="${buttonClassNames.root} ${buttonClassNames.disabled} ${textFieldClassNames.button}" type="button">
+        <span class="${buttonClassNames.container}">
+          <span class="${buttonClassNames.icon}">&#xf070;</span>
+        </span>
+      </button>
+    </div>
+  </div>
+</div>
+</div>`;
+
+const textFields = document.createElement('div');
+textFields.innerHTML = TextFields;
+document.body.appendChild(textFields);

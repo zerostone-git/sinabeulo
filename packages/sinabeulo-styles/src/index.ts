@@ -31,6 +31,11 @@ import {
   SelectItemsClassNames,
   classNamesForSelectItems,
 } from './components/SelectItems';
+import {
+  textFieldClassNames,
+  TextFieldClassNames,
+  classNamesForTextField,
+} from './components/TextField';
 
 export {
   classNamesForButton,
@@ -39,12 +44,14 @@ export {
   classNamesForRadio,
   classNamesForSelect,
   classNamesForSelectItems,
+  classNamesForTextField,
   buttonClassNames,
   checkboxClassNames,
   layerClassNames,
   radioClassNames,
   selectClassNames,
   selectItemsClassNames,
+  textFieldClassNames,
 };
 export type {
   ButtonClassNames,
@@ -53,4 +60,5 @@ export type {
   RadioClassNames,
   SelectClassNames,
   SelectItemsClassNames,
+  TextFieldClassNames,
 };
