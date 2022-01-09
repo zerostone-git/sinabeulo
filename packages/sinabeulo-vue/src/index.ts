@@ -1,3 +1,5 @@
-console.log('index');
+import '@sinabeulo/styles/dist/index.css';
+import Button, { ButtonProps } from './components/Button';
 
-export {};
+export { Button };
+export type { ButtonProps };
