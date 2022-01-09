@@ -12,7 +12,7 @@
   "private": true,
   "scripts": {
     "test": "echo -e \"I don't test.\"",
-    "build": "webpack --env production && tsc --project tsconfig.build.json",
+    "build": "webpack --env production && tsc --build tsconfig.build.json",
     "serve": "webpack serve"
   },
   "dependencies": {

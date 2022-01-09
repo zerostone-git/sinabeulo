@@ -12,7 +12,7 @@
   "private": true,
   "scripts": {
     "test": "jest",
-    "build": "webpack --env production && tsc --project tsconfig.build.json"
+    "build": "webpack --env production && tsc --build tsconfig.build.json"
   },
   "devDependencies": {
     "@babel/core": "^7.16.7",
