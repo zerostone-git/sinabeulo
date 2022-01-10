@@ -1,97 +1,77 @@
 import React from 'react';
-import { unmountComponentAtNode } from 'react-dom';
 import { buttonClassNames } from '@sinabeulo/styles';
-import { render } from '@testing-library/react';
+import { fireEvent, render } from '@testing-library/react';
 import Button from '../Button';
-
-let container!: HTMLDivElement;
-beforeEach(() => {
-  container = document.createElement('div');
-  document.body.appendChild(container);
-});
-
-afterEach(() => {
-  unmountComponentAtNode(container);
-  container.remove();
-  container = null as unknown as HTMLDivElement;
-});
 
 describe('Button', () => {
   test('Render as text.', () => {
-    render(<Button>Standard</Button>, { container });
+    const { container, rerender } = render(<Button>Standard</Button>);
     expect(container.textContent).toBe('Standard');
 
-    render(<Button primary>Primary</Button>, { container });
+    rerender(<Button primary>Primary</Button>);
     expect(container.textContent).toBe('Primary');
 
-    render(<Button checked>Checked</Button>, { container });
+    rerender(<Button checked>Checked</Button>);
     expect(container.textContent).toBe('Checked');
 
-    render(<Button disabled>Standard</Button>, { container });
+    rerender(<Button disabled>Standard</Button>);
     expect(container.textContent).toBe('Standard');
 
-    render(
+    rerender(
       <Button disabled primary>
         Primary
-      </Button>,
-      { container }
+      </Button>
     );
     expect(container.textContent).toBe('Primary');
 
-    render(
+    rerender(
       <Button disabled checked>
         Checked
-      </Button>,
-      { container }
+      </Button>
     );
     expect(container.textContent).toBe('Checked');
 
-    render(<Button icon={<span>icon 1</span>}>Standard</Button>, { container });
+    rerender(<Button icon={<span>icon 1</span>}>Standard</Button>);
     expect(container.textContent).toBe('icon 1Standard');
 
-    render(
+    rerender(
       <Button icon={<span>icon 2</span>} primary>
         Primary
-      </Button>,
-      { container }
+      </Button>
     );
     expect(container.textContent).toBe('icon 2Primary');
 
-    render(
+    rerender(
       <Button icon={<span>icon 3</span>} checked>
         Checked
-      </Button>,
-      { container }
+      </Button>
     );
     expect(container.textContent).toBe('icon 3Checked');
 
-    render(
+    rerender(
       <Button icon={<span>icon 4</span>} disabled>
         Standard
-      </Button>,
-      { container }
+      </Button>
     );
     expect(container.textContent).toBe('icon 4Standard');
 
-    render(
+    rerender(
       <Button icon={<span>icon 5</span>} disabled primary>
         Primary
-      </Button>,
-      { container }
+      </Button>
     );
     expect(container.textContent).toBe('icon 5Primary');
 
-    render(
+    rerender(
       <Button icon={<span>icon 6</span>} disabled checked>
         Checked
-      </Button>,
-      { container }
+      </Button>
     );
     expect(container.textContent).toBe('icon 6Checked');
   });
 
   test('Standard button.', () => {
-    render(<Button>Standard</Button>, { container });
+    const { container } = render(<Button>Standard</Button>);
     expect(container.querySelector('button')).not.toHaveClass(
       buttonClassNames.disabled
     );
@@ -104,7 +84,7 @@ describe('Button', () => {
   });
 
   test('Primary button.', () => {
-    render(<Button primary>Primary</Button>, { container });
+    const { container, rerender } = render(<Button primary>Primary</Button>);
     expect(container.querySelector('button')).not.toHaveClass(
       buttonClassNames.disabled
     );
@@ -115,7 +95,7 @@ describe('Button', () => {
       buttonClassNames.checked
     );
 
-    render(<Button>Standard</Button>, { container });
+    rerender(<Button>Standard</Button>);
     expect(container.querySelector('button')).not.toHaveClass(
       buttonClassNames.disabled
     );
@@ -128,7 +108,7 @@ describe('Button', () => {
   });
 
   test('Checked button.', () => {
-    render(<Button checked>Checked</Button>, { container });
+    const { container, rerender } = render(<Button checked>Checked</Button>);
     expect(container.querySelector('button')).not.toHaveClass(
       buttonClassNames.disabled
     );
@@ -139,7 +119,7 @@ describe('Button', () => {
       buttonClassNames.checked
     );
 
-    render(<Button>Standard</Button>, { container });
+    rerender(<Button>Standard</Button>);
     expect(container.querySelector('button')).not.toHaveClass(
       buttonClassNames.disabled
     );
@@ -152,7 +132,7 @@ describe('Button', () => {
   });
 
   test('Disabled button.', () => {
-    render(<Button disabled>Standard</Button>, { container });
+    const { container, rerender } = render(<Button disabled>Standard</Button>);
     expect(container.querySelector('button')).toHaveClass(
       buttonClassNames.disabled
     );
@@ -163,7 +143,7 @@ describe('Button', () => {
       buttonClassNames.checked
     );
 
-    render(<Button>Standard</Button>, { container });
+    rerender(<Button>Standard</Button>);
     expect(container.querySelector('button')).not.toHaveClass(
       buttonClassNames.disabled
     );
@@ -174,11 +154,10 @@ describe('Button', () => {
       buttonClassNames.checked
     );
 
-    render(
+    rerender(
       <Button primary disabled>
         Primary
-      </Button>,
-      { container }
+      </Button>
     );
     expect(container.querySelector('button')).toHaveClass(
       buttonClassNames.disabled
@@ -190,7 +169,7 @@ describe('Button', () => {
       buttonClassNames.checked
     );
 
-    render(<Button primary>Primary</Button>, { container });
+    rerender(<Button primary>Primary</Button>);
     expect(container.querySelector('button')).not.toHaveClass(
       buttonClassNames.disabled
     );
@@ -201,11 +180,10 @@ describe('Button', () => {
       buttonClassNames.checked
     );
 
-    render(
+    rerender(
       <Button checked disabled>
         Checked
-      </Button>,
-      { container }
+      </Button>
     );
     expect(container.querySelector('button')).toHaveClass(
       buttonClassNames.disabled
@@ -217,7 +195,7 @@ describe('Button', () => {
       buttonClassNames.checked
     );
 
-    render(<Button checked>Checked</Button>, { container });
+    rerender(<Button checked>Checked</Button>);
     expect(container.querySelector('button')).not.toHaveClass(
       buttonClassNames.disabled
     );
@@ -231,14 +209,14 @@ describe('Button', () => {
 
   test('Click event', () => {
     const onClick = jest.fn();
-    render(<Button onClick={onClick}>Button</Button>, { container });
+    const { container } = render(<Button onClick={onClick}>Button</Button>);
 
     const button = container.querySelector('button') as HTMLButtonElement;
-    button.dispatchEvent(new MouseEvent('click', { bubbles: true }));
+    fireEvent.click(button);
     expect(onClick).toHaveBeenCalledTimes(1);
 
     for (let i = 0; i < 5; i += 1) {
-      button.dispatchEvent(new MouseEvent('click', { bubbles: true }));
+      fireEvent.click(button);
     }
     expect(onClick).toHaveBeenCalledTimes(6);
   });
