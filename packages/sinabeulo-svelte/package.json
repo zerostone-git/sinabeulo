@@ -1,0 +1,61 @@
+{
+  "name": "@sinabeulo/svelte",
+  "version": "0.0.1",
+  "main": "dist/index.js",
+  "types": "dist/types/index.d.ts",
+  "repository": "https://github.com/zerostone-git/sinabeulo.git",
+  "author": {
+    "name": "Yeongseok Yoon",
+    "email": "zerostone@live.com"
+  },
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "test": "jest",
+    "build": "webpack --env production && tsc --build tsconfig.build.json",
+    "serve": "webpack serve",
+    "lint": "eslint src/**/*"
+  },
+  "dependencies": {
+    "@sinabeulo/styles": "^0.0.1",
+    "@sinabeulo/utils": "^0.0.1",
+    "svelte": "^3.45.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.16.7",
+    "@babel/preset-env": "^7.16.7",
+    "@babel/preset-typescript": "^7.16.7",
+    "@testing-library/jest-dom": "^5.16.1",
+    "@testing-library/svelte": "^3.0.3",
+    "@tsconfig/svelte": "^3.0.0",
+    "@types/jest": "^27.4.0",
+    "@typescript-eslint/eslint-plugin": "^5.8.1",
+    "@typescript-eslint/parser": "^5.8.1",
+    "babel-loader": "^8.2.3",
+    "clean-webpack-plugin": "^4.0.0",
+    "core-js": "^3.20.2",
+    "css-loader": "^6.5.1",
+    "eslint": "^8.6.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-airbnb-typescript": "^16.1.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-jest": "^25.3.4",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-svelte3": "^3.3.0",
+    "html-webpack-plugin": "^5.5.0",
+    "jest": "^27.4.5",
+    "jest-transform-stub": "^2.0.0",
+    "jsdom": "^19.0.0",
+    "mini-css-extract-plugin": "^2.4.5",
+    "prettier": "^2.5.1",
+    "style-loader": "^3.3.1",
+    "svelte-check": "^2.2.11",
+    "svelte-jester": "^2.1.5",
+    "svelte-loader": "^3.1.2",
+    "svelte-preprocess": "^4.10.1",
+    "typescript": "^4.5.4",
+    "webpack": "^5.65.0",
+    "webpack-cli": "^4.9.1"
+  }
+}

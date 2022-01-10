@@ -13,7 +13,8 @@
       "packages/sinabeulo-react",
       "packages/sinabeulo-react-docs",
       "packages/sinabeulo-vue",
-      "packages/sinabeulo-vue-docs"
+      "packages/sinabeulo-vue-docs",
+      "packages/sinabeulo-svelte"
     ],
     "nohoist": [
       "**/@types/react",

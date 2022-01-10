@@ -1,11 +1,21 @@
 {
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "vue",
+    "svelte",
+    "html"
+  ],
   "eslint.workingDirectories": [
     "./packages/sinabeulo-react",
     "./packages/sinabeulo-react-docs",
     "./packages/sinabeulo-styles",
     "./packages/sinabeulo-utils",
     "./packages/sinabeulo-vue",
-    "./packages/sinabeulo-vue-docs"
+    "./packages/sinabeulo-vue-docs",
+    "./packages/sinabeulo-svelte"
   ],
   "files.associations": {
     "*.mdx": "markdown"

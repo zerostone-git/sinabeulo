@@ -1,0 +1,27 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "composite": true,
+    "declaration": true,
+    "declarationDir": "dist/types",
+    "emitDeclarationOnly": true,
+    "jsx": "preserve",
+    "outDir": "dist",
+    "rootDir": "src",
+    "paths": {
+      "@sinabeulo/styles": ["../sinabeulo-styles/src/index.ts"],
+      "@sinabeulo/utils": ["../sinabeulo-utils/src/index.ts"]
+    }
+  },
+  "references": [
+    {
+      "path": "../sinabeulo-styles"
+    },
+    {
+      "path": "../sinabeulo-utils"
+    }
+  ],
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist", "src/preview", "**/__tests__/*"]
+}
