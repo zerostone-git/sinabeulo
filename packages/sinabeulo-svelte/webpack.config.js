@@ -94,11 +94,11 @@ module.exports = function (env, args) {
     config.entry.index = path.resolve(__dirname, 'src', 'preview', 'index.ts');
     config.devServer = {
       hot: true,
-      port: 8080,
+      port: 8083,
     };
     config.plugins.push(
       new HtmlWebpackPlugin({
-        title: 'sinabeulo',
+        title: 'sinabeulo-svelte',
       })
     );
     delete config.externals;

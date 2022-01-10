@@ -99,7 +99,7 @@ module.exports = function (env, args) {
     };
     config.plugins.push(
       new HtmlWebpackPlugin({
-        title: 'sinabeulo',
+        title: 'sinabeulo-styles',
       })
     );
     delete config.externals;

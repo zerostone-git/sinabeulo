@@ -85,11 +85,11 @@ module.exports = function (env, args) {
     config.devtool = 'eval';
     config.devServer = {
       hot: true,
-      port: 8080,
+      port: 8081,
     };
     config.plugins.push(
       new HtmlWebpackPlugin({
-        title: 'sinabeulo',
+        title: 'sinabeulo-react',
       })
     );
     delete config.externals;

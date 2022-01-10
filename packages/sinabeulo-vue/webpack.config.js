@@ -84,11 +84,11 @@ module.exports = function (env, args) {
     config.devtool = 'eval';
     config.devServer = {
       hot: true,
-      port: 8080,
+      port: 8082,
     };
     config.plugins.push(
       new HtmlWebpackPlugin({
-        title: 'sinabeulo',
+        title: 'sinabeulo-vue',
       })
     );
     delete config.externals;

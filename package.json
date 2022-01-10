@@ -30,6 +30,10 @@
   "scripts": {
     "serve-react": "yarn workspace @sinabeulo/react-docs serve",
     "serve-vue": "yarn workspace @sinabeulo/vue-docs serve",
+    "preview-styles": "yarn workspace @sinabeulo/styles serve",
+    "preview-react": "yarn workspace @sinabeulo/react serve",
+    "preview-vue": "yarn workspace @sinabeulo/vue serve",
+    "preview-svelte": "yarn workspace @sinabeulo/svelte serve",
     "test": "yarn workspaces run test",
     "prebuild": "tsc --build --clean",
     "build": "yarn workspaces run build"
