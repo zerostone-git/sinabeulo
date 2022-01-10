@@ -20,18 +20,6 @@ module.exports = {
     project: './tsconfig.json',
   },
   rules: {
-    'import/extensions': [
-      'error',
-      'ignorePackages',
-      {
-        js: 'always',
-        mjs: 'always',
-        jsx: 'always',
-        ts: 'always',
-        tsx: 'always',
-        'd.ts': 'always',
-      },
-    ],
     'import/order': [
       'error',
       {
