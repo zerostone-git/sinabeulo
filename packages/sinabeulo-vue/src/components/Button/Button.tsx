@@ -73,7 +73,7 @@ const Button = defineComponent({
           [this.cn.checked]: this.checked,
         })}
         disabled={this.disabled}
-        onClick={(e) => this.handleClick(e)}
+        onClick={this.handleClick}
       >
         <span class={this.cn.container}>
           {this.$slots.icon && (
