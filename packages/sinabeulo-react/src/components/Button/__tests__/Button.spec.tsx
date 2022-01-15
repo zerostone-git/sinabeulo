@@ -72,151 +72,95 @@ describe('Button', () => {
 
   test('Standard button.', () => {
     const { container } = render(<Button>Standard</Button>);
-    expect(container.querySelector('button')).not.toHaveClass(
-      buttonClassNames.disabled
-    );
-    expect(container.querySelector('button')).not.toHaveClass(
-      buttonClassNames.primary
-    );
-    expect(container.querySelector('button')).not.toHaveClass(
-      buttonClassNames.checked
-    );
+    const elButton = container.querySelector('button');
+    expect(elButton).not.toHaveClass(buttonClassNames.disabled);
+    expect(elButton).not.toHaveClass(buttonClassNames.primary);
+    expect(elButton).not.toHaveClass(buttonClassNames.checked);
   });
 
   test('Primary button.', () => {
     const { container, rerender } = render(<Button primary>Primary</Button>);
-    expect(container.querySelector('button')).not.toHaveClass(
-      buttonClassNames.disabled
-    );
-    expect(container.querySelector('button')).toHaveClass(
-      buttonClassNames.primary
-    );
-    expect(container.querySelector('button')).not.toHaveClass(
-      buttonClassNames.checked
-    );
+    let elButton = container.querySelector('button');
+    expect(elButton).not.toHaveClass(buttonClassNames.disabled);
+    expect(elButton).toHaveClass(buttonClassNames.primary);
+    expect(elButton).not.toHaveClass(buttonClassNames.checked);
 
     rerender(<Button>Standard</Button>);
-    expect(container.querySelector('button')).not.toHaveClass(
-      buttonClassNames.disabled
-    );
-    expect(container.querySelector('button')).not.toHaveClass(
-      buttonClassNames.primary
-    );
-    expect(container.querySelector('button')).not.toHaveClass(
-      buttonClassNames.checked
-    );
+    elButton = container.querySelector('button');
+    expect(elButton).not.toHaveClass(buttonClassNames.disabled);
+    expect(elButton).not.toHaveClass(buttonClassNames.primary);
+    expect(elButton).not.toHaveClass(buttonClassNames.checked);
   });
 
   test('Checked button.', () => {
     const { container, rerender } = render(<Button checked>Checked</Button>);
-    expect(container.querySelector('button')).not.toHaveClass(
-      buttonClassNames.disabled
-    );
-    expect(container.querySelector('button')).not.toHaveClass(
-      buttonClassNames.primary
-    );
-    expect(container.querySelector('button')).toHaveClass(
-      buttonClassNames.checked
-    );
+    let elButton = container.querySelector('button');
+    expect(elButton).not.toHaveClass(buttonClassNames.disabled);
+    expect(elButton).not.toHaveClass(buttonClassNames.primary);
+    expect(elButton).toHaveClass(buttonClassNames.checked);
 
     rerender(<Button>Standard</Button>);
-    expect(container.querySelector('button')).not.toHaveClass(
-      buttonClassNames.disabled
-    );
-    expect(container.querySelector('button')).not.toHaveClass(
-      buttonClassNames.primary
-    );
-    expect(container.querySelector('button')).not.toHaveClass(
-      buttonClassNames.checked
-    );
+    elButton = container.querySelector('button');
+    expect(elButton).not.toHaveClass(buttonClassNames.disabled);
+    expect(elButton).not.toHaveClass(buttonClassNames.primary);
+    expect(elButton).not.toHaveClass(buttonClassNames.checked);
   });
 
   test('Disabled button.', () => {
     const { container, rerender } = render(<Button disabled>Standard</Button>);
-    expect(container.querySelector('button')).toHaveClass(
-      buttonClassNames.disabled
-    );
-    expect(container.querySelector('button')).not.toHaveClass(
-      buttonClassNames.primary
-    );
-    expect(container.querySelector('button')).not.toHaveClass(
-      buttonClassNames.checked
-    );
+    let elButton = container.querySelector('button');
+    expect(elButton).toHaveClass(buttonClassNames.disabled);
+    expect(elButton).not.toHaveClass(buttonClassNames.primary);
+    expect(elButton).not.toHaveClass(buttonClassNames.checked);
 
     rerender(<Button>Standard</Button>);
-    expect(container.querySelector('button')).not.toHaveClass(
-      buttonClassNames.disabled
-    );
-    expect(container.querySelector('button')).not.toHaveClass(
-      buttonClassNames.primary
-    );
-    expect(container.querySelector('button')).not.toHaveClass(
-      buttonClassNames.checked
-    );
+    elButton = container.querySelector('button');
+    expect(elButton).not.toHaveClass(buttonClassNames.disabled);
+    expect(elButton).not.toHaveClass(buttonClassNames.primary);
+    expect(elButton).not.toHaveClass(buttonClassNames.checked);
 
     rerender(
       <Button primary disabled>
         Primary
       </Button>
     );
-    expect(container.querySelector('button')).toHaveClass(
-      buttonClassNames.disabled
-    );
-    expect(container.querySelector('button')).toHaveClass(
-      buttonClassNames.primary
-    );
-    expect(container.querySelector('button')).not.toHaveClass(
-      buttonClassNames.checked
-    );
+    elButton = container.querySelector('button');
+    expect(elButton).toHaveClass(buttonClassNames.disabled);
+    expect(elButton).toHaveClass(buttonClassNames.primary);
+    expect(elButton).not.toHaveClass(buttonClassNames.checked);
 
     rerender(<Button primary>Primary</Button>);
-    expect(container.querySelector('button')).not.toHaveClass(
-      buttonClassNames.disabled
-    );
-    expect(container.querySelector('button')).toHaveClass(
-      buttonClassNames.primary
-    );
-    expect(container.querySelector('button')).not.toHaveClass(
-      buttonClassNames.checked
-    );
+    elButton = container.querySelector('button');
+    expect(elButton).not.toHaveClass(buttonClassNames.disabled);
+    expect(elButton).toHaveClass(buttonClassNames.primary);
+    expect(elButton).not.toHaveClass(buttonClassNames.checked);
 
     rerender(
       <Button checked disabled>
         Checked
       </Button>
     );
-    expect(container.querySelector('button')).toHaveClass(
-      buttonClassNames.disabled
-    );
-    expect(container.querySelector('button')).not.toHaveClass(
-      buttonClassNames.primary
-    );
-    expect(container.querySelector('button')).toHaveClass(
-      buttonClassNames.checked
-    );
+    elButton = container.querySelector('button');
+    expect(elButton).toHaveClass(buttonClassNames.disabled);
+    expect(elButton).not.toHaveClass(buttonClassNames.primary);
+    expect(elButton).toHaveClass(buttonClassNames.checked);
 
     rerender(<Button checked>Checked</Button>);
-    expect(container.querySelector('button')).not.toHaveClass(
-      buttonClassNames.disabled
-    );
-    expect(container.querySelector('button')).not.toHaveClass(
-      buttonClassNames.primary
-    );
-    expect(container.querySelector('button')).toHaveClass(
-      buttonClassNames.checked
-    );
+    elButton = container.querySelector('button');
+    expect(elButton).not.toHaveClass(buttonClassNames.disabled);
+    expect(elButton).not.toHaveClass(buttonClassNames.primary);
+    expect(elButton).toHaveClass(buttonClassNames.checked);
   });
 
   test('Click event', () => {
     const onClick = jest.fn();
     const { container } = render(<Button onClick={onClick}>Button</Button>);
-
-    const button = container.querySelector('button') as HTMLButtonElement;
-    fireEvent.click(button);
+    const elButton = container.querySelector('button') as HTMLButtonElement;
+    fireEvent.click(elButton);
     expect(onClick).toHaveBeenCalledTimes(1);
 
     for (let i = 0; i < 5; i += 1) {
-      fireEvent.click(button);
+      fireEvent.click(elButton);
     }
     expect(onClick).toHaveBeenCalledTimes(6);
   });

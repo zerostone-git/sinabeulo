@@ -6,7 +6,7 @@ describe('Button', () => {
   test('Render as text.', () => {
     let wrapper = mount(Button, {
       slots: {
-        default: 'Standard',
+        default: () => 'Standard',
       },
     });
     expect(wrapper.text()).toBe('Standard');
@@ -17,7 +17,7 @@ describe('Button', () => {
         primary: true,
       },
       slots: {
-        default: 'Primary',
+        default: () => 'Primary',
       },
     });
     expect(wrapper.text()).toBe('Primary');
@@ -28,7 +28,7 @@ describe('Button', () => {
         checked: true,
       },
       slots: {
-        default: 'Checked',
+        default: () => 'Checked',
       },
     });
     expect(wrapper.text()).toBe('Checked');
@@ -39,7 +39,7 @@ describe('Button', () => {
         disabled: true,
       },
       slots: {
-        default: 'Standard',
+        default: () => 'Standard',
       },
     });
     expect(wrapper.text()).toBe('Standard');
@@ -51,7 +51,7 @@ describe('Button', () => {
         primary: true,
       },
       slots: {
-        default: 'Primary',
+        default: () => 'Primary',
       },
     });
     expect(wrapper.text()).toBe('Primary');
@@ -63,7 +63,7 @@ describe('Button', () => {
         checked: true,
       },
       slots: {
-        default: 'Checked',
+        default: () => 'Checked',
       },
     });
     expect(wrapper.text()).toBe('Checked');
@@ -144,18 +144,13 @@ describe('Button', () => {
   test('Standard button.', () => {
     const wrapper = mount(Button, {
       slots: {
-        default: 'Standard',
+        default: () => 'Standard',
       },
     });
-    expect(wrapper.find('button').element).not.toHaveClass(
-      buttonClassNames.disabled
-    );
-    expect(wrapper.find('button').element).not.toHaveClass(
-      buttonClassNames.primary
-    );
-    expect(wrapper.find('button').element).not.toHaveClass(
-      buttonClassNames.checked
-    );
+    const elButton = wrapper.find('button').element;
+    expect(elButton).not.toHaveClass(buttonClassNames.disabled);
+    expect(elButton).not.toHaveClass(buttonClassNames.primary);
+    expect(elButton).not.toHaveClass(buttonClassNames.checked);
     wrapper.unmount();
   });
 
@@ -165,29 +160,19 @@ describe('Button', () => {
         primary: true,
       },
       slots: {
-        default: 'Primary',
+        default: () => 'Primary',
       },
     });
-    expect(wrapper.find('button').element).not.toHaveClass(
-      buttonClassNames.disabled
-    );
-    expect(wrapper.find('button').element).toHaveClass(
-      buttonClassNames.primary
-    );
-    expect(wrapper.find('button').element).not.toHaveClass(
-      buttonClassNames.checked
-    );
+    let elButton = wrapper.find('button').element;
+    expect(elButton).not.toHaveClass(buttonClassNames.disabled);
+    expect(elButton).toHaveClass(buttonClassNames.primary);
+    expect(elButton).not.toHaveClass(buttonClassNames.checked);
 
     await wrapper.setProps({ primary: false });
-    expect(wrapper.find('button').element).not.toHaveClass(
-      buttonClassNames.disabled
-    );
-    expect(wrapper.find('button').element).not.toHaveClass(
-      buttonClassNames.primary
-    );
-    expect(wrapper.find('button').element).not.toHaveClass(
-      buttonClassNames.checked
-    );
+    elButton = wrapper.find('button').element;
+    expect(elButton).not.toHaveClass(buttonClassNames.disabled);
+    expect(elButton).not.toHaveClass(buttonClassNames.primary);
+    expect(elButton).not.toHaveClass(buttonClassNames.checked);
     wrapper.unmount();
   });
 
@@ -197,29 +182,19 @@ describe('Button', () => {
         checked: true,
       },
       slots: {
-        default: 'Checked',
+        default: () => 'Checked',
       },
     });
-    expect(wrapper.find('button').element).not.toHaveClass(
-      buttonClassNames.disabled
-    );
-    expect(wrapper.find('button').element).not.toHaveClass(
-      buttonClassNames.primary
-    );
-    expect(wrapper.find('button').element).toHaveClass(
-      buttonClassNames.checked
-    );
+    let elButton = wrapper.find('button').element;
+    expect(elButton).not.toHaveClass(buttonClassNames.disabled);
+    expect(elButton).not.toHaveClass(buttonClassNames.primary);
+    expect(elButton).toHaveClass(buttonClassNames.checked);
 
     await wrapper.setProps({ checked: false });
-    expect(wrapper.find('button').element).not.toHaveClass(
-      buttonClassNames.disabled
-    );
-    expect(wrapper.find('button').element).not.toHaveClass(
-      buttonClassNames.primary
-    );
-    expect(wrapper.find('button').element).not.toHaveClass(
-      buttonClassNames.checked
-    );
+    elButton = wrapper.find('button').element;
+    expect(elButton).not.toHaveClass(buttonClassNames.disabled);
+    expect(elButton).not.toHaveClass(buttonClassNames.primary);
+    expect(elButton).not.toHaveClass(buttonClassNames.checked);
     wrapper.unmount();
   });
 
@@ -229,29 +204,19 @@ describe('Button', () => {
         disabled: true,
       },
       slots: {
-        default: 'Standard',
+        default: () => 'Standard',
       },
     });
-    expect(wrapper.find('button').element).toHaveClass(
-      buttonClassNames.disabled
-    );
-    expect(wrapper.find('button').element).not.toHaveClass(
-      buttonClassNames.primary
-    );
-    expect(wrapper.find('button').element).not.toHaveClass(
-      buttonClassNames.checked
-    );
+    let elButton = wrapper.find('button').element;
+    expect(elButton).toHaveClass(buttonClassNames.disabled);
+    expect(elButton).not.toHaveClass(buttonClassNames.primary);
+    expect(elButton).not.toHaveClass(buttonClassNames.checked);
 
     await wrapper.setProps({ disabled: false });
-    expect(wrapper.find('button').element).not.toHaveClass(
-      buttonClassNames.disabled
-    );
-    expect(wrapper.find('button').element).not.toHaveClass(
-      buttonClassNames.primary
-    );
-    expect(wrapper.find('button').element).not.toHaveClass(
-      buttonClassNames.checked
-    );
+    elButton = wrapper.find('button').element;
+    expect(elButton).not.toHaveClass(buttonClassNames.disabled);
+    expect(elButton).not.toHaveClass(buttonClassNames.primary);
+    expect(elButton).not.toHaveClass(buttonClassNames.checked);
     wrapper.unmount();
 
     wrapper = mount(Button, {
@@ -260,29 +225,19 @@ describe('Button', () => {
         primary: true,
       },
       slots: {
-        default: 'Primary',
+        default: () => 'Primary',
       },
     });
-    expect(wrapper.find('button').element).toHaveClass(
-      buttonClassNames.disabled
-    );
-    expect(wrapper.find('button').element).toHaveClass(
-      buttonClassNames.primary
-    );
-    expect(wrapper.find('button').element).not.toHaveClass(
-      buttonClassNames.checked
-    );
+    elButton = wrapper.find('button').element;
+    expect(elButton).toHaveClass(buttonClassNames.disabled);
+    expect(elButton).toHaveClass(buttonClassNames.primary);
+    expect(elButton).not.toHaveClass(buttonClassNames.checked);
 
     await wrapper.setProps({ disabled: false });
-    expect(wrapper.find('button').element).not.toHaveClass(
-      buttonClassNames.disabled
-    );
-    expect(wrapper.find('button').element).toHaveClass(
-      buttonClassNames.primary
-    );
-    expect(wrapper.find('button').element).not.toHaveClass(
-      buttonClassNames.checked
-    );
+    elButton = wrapper.find('button').element;
+    expect(elButton).not.toHaveClass(buttonClassNames.disabled);
+    expect(elButton).toHaveClass(buttonClassNames.primary);
+    expect(elButton).not.toHaveClass(buttonClassNames.checked);
     wrapper.unmount();
 
     wrapper = mount(Button, {
@@ -291,48 +246,38 @@ describe('Button', () => {
         checked: true,
       },
       slots: {
-        default: 'Checked',
+        default: () => 'Checked',
       },
     });
-    expect(wrapper.find('button').element).toHaveClass(
-      buttonClassNames.disabled
-    );
-    expect(wrapper.find('button').element).not.toHaveClass(
-      buttonClassNames.primary
-    );
-    expect(wrapper.find('button').element).toHaveClass(
-      buttonClassNames.checked
-    );
+    elButton = wrapper.find('button').element;
+    expect(elButton).toHaveClass(buttonClassNames.disabled);
+    expect(elButton).not.toHaveClass(buttonClassNames.primary);
+    expect(elButton).toHaveClass(buttonClassNames.checked);
 
     await wrapper.setProps({ disabled: false });
-    expect(wrapper.find('button').element).not.toHaveClass(
-      buttonClassNames.disabled
-    );
-    expect(wrapper.find('button').element).not.toHaveClass(
-      buttonClassNames.primary
-    );
-    expect(wrapper.find('button').element).toHaveClass(
-      buttonClassNames.checked
-    );
+    elButton = wrapper.find('button').element;
+    expect(elButton).not.toHaveClass(buttonClassNames.disabled);
+    expect(elButton).not.toHaveClass(buttonClassNames.primary);
+    expect(elButton).toHaveClass(buttonClassNames.checked);
     wrapper.unmount();
   });
 
   test('Click event', async () => {
     const wrapper = mount(Button, {
       slots: {
-        default: 'Button',
+        default: () => 'Button',
       },
     });
 
-    const button = wrapper.find('button');
-    await button.trigger('click');
+    const warpButton = wrapper.find('button');
+    await warpButton.trigger('click');
     expect(wrapper.emitted('click')).toHaveLength(1);
 
-    await button.trigger('click');
-    await button.trigger('click');
-    await button.trigger('click');
-    await button.trigger('click');
-    await button.trigger('click');
+    await warpButton.trigger('click');
+    await warpButton.trigger('click');
+    await warpButton.trigger('click');
+    await warpButton.trigger('click');
+    await warpButton.trigger('click');
     expect(wrapper.emitted('click')).toHaveLength(6);
     wrapper.unmount();
   });
