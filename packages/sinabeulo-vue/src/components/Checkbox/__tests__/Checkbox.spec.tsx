@@ -48,9 +48,7 @@ const ControlledCheckbox = defineComponent({
         disabled={this.disabled}
         checked={this.isChecked}
         indeterminate={this.isIndeterminate}
-        onChange={(e?: Event, checked?: boolean) =>
-          this.handleChange(e, checked)
-        }
+        onChange={this.handleChange}
       />
     );
   },
