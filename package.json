@@ -24,7 +24,8 @@
       "**/@mdx-js/loader",
       "**/@mdx-js/mdx",
       "**/@mdx-js/react",
-      "**/@mdx-js/util"
+      "**/@mdx-js/util",
+      "**/svelte"
     ]
   },
   "scripts": {
