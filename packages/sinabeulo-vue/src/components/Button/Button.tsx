@@ -3,46 +3,36 @@ import { ButtonClassNames, classNamesForButton } from '@sinabeulo/styles';
 import { createClassName } from '@sinabeulo/utils';
 
 /**
- * 버튼의 속성입니다.
- */
-type ButtonProps = {
-  /**
-   * 버튼의 CSS 클래스 이름입니다.
-   */
-  classNames?: Partial<ButtonClassNames>;
-  /**
-   * 버튼이 비활성화되어 있는지 여부입니다.
-   */
-  disabled?: boolean;
-  /**
-   * 버튼이 일 순위인 버튼인지 여부입니다.
-   */
-  primary?: boolean;
-  /**
-   * 버튼이 체크되어 있는지 여부입니다.
-   */
-  checked?: boolean;
-};
-
-/**
  * 버튼입니다.
  */
 const Button = defineComponent({
   name: 'SiButton',
   props: {
+    /**
+     * 버튼의 CSS 클래스 이름입니다.
+     */
     classNames: {
       type: Object as PropType<Partial<ButtonClassNames>>,
       required: false,
       default: undefined,
     },
+    /**
+     * 버튼이 비활성화되어 있는지 여부입니다.
+     */
     checked: {
       type: Boolean,
       required: false,
     },
+    /**
+     * 버튼이 일 순위인 버튼인지 여부입니다.
+     */
     disabled: {
       type: Boolean,
       required: false,
     },
+    /**
+     * 버튼이 체크되어 있는지 여부입니다.
+     */
     primary: {
       type: Boolean,
       required: false,
@@ -89,4 +79,3 @@ const Button = defineComponent({
 });
 
 export default Button;
-export type { ButtonProps };
