@@ -7,12 +7,13 @@
     "declarationDir": "dist/types",
     "emitDeclarationOnly": true,
     "outDir": "dist",
+    "preserveValueImports": true,
     "rootDir": "src",
-    "paths": {
-      "@sinabeulo/styles": ["../sinabeulo-styles/src/index.ts"],
-      "@sinabeulo/utils": ["../sinabeulo-utils/src/index.ts"]
-    },
     "types": ["svelte"]
+    // "paths": {
+    //   "@sinabeulo/styles": ["../sinabeulo-styles/src/index.ts"],
+    //   "@sinabeulo/utils": ["../sinabeulo-utils/src/index.ts"]
+    // }
   },
   "references": [
     {
@@ -21,6 +22,15 @@
     {
       "path": "../sinabeulo-utils"
     }
+  ],
+  "files": [
+    "src/components/Button/Button.svelte",
+    "src/components/Button/__tests__/ButtonTest.svelte",
+    "src/components/Checkbox/Checkbox.svelte",
+    "src/components/Checkbox/__tests__/ControlledCheckbox.svelte",
+    "src/preview/App.svelte",
+    "src/preview/ButtonPreview.svelte",
+    "src/preview/CheckboxPreview.svelte"
   ],
   "include": ["src/**/*"],
   "exclude": ["node_modules", "dist"]

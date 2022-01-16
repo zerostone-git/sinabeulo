@@ -14,7 +14,8 @@
     "test": "jest",
     "build": "webpack --env production && tsc --build tsconfig.build.json",
     "serve": "webpack serve",
-    "lint": "eslint src/**/*"
+    "lint": "eslint src/**/*",
+    "svelte-check": "svelte-check"
   },
   "dependencies": {
     "@sinabeulo/styles": "^0.0.1",

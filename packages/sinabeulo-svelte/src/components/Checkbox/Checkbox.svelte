@@ -1,6 +1,9 @@
 <script lang="ts">
   import { createEventDispatcher } from 'svelte';
-  import { CheckboxClassNames, classNamesForCheckbox } from '@sinabeulo/styles';
+  import {
+    type CheckboxClassNames,
+    classNamesForCheckbox,
+  } from '@sinabeulo/styles';
   import { createClassName } from '@sinabeulo/utils';
 
   // eslint-disable-next-line no-undef, no-underscore-dangle
@@ -15,7 +18,7 @@
   /**
    * 체크박스의 CSS 클래스 이름입니다.
    */
-  export let classNames: Partial<CheckboxClassNames> | undefined = undefined;
+  export let classNames = undefined as Partial<CheckboxClassNames> | undefined;
   /**
    * 체크박스의 옆에 표시할 문자열입니다.
    */

@@ -1,9 +1,12 @@
 <script lang="ts">
   import { createEventDispatcher } from 'svelte';
-  import { ButtonClassNames, classNamesForButton } from '@sinabeulo/styles';
+  import {
+    type ButtonClassNames,
+    classNamesForButton,
+  } from '@sinabeulo/styles';
   import { createClassName } from '@sinabeulo/utils';
 
-  export let classNames = undefined as ButtonClassNames | undefined;
+  export let classNames = undefined as Partial<ButtonClassNames> | undefined;
   export let disabled = false;
   export let primary = false;
   export let checked = false;
