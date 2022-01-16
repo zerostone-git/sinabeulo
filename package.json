@@ -25,7 +25,17 @@
       "**/@mdx-js/mdx",
       "**/@mdx-js/react",
       "**/@mdx-js/util",
-      "**/svelte"
+      "**/@vue",
+      "**/react",
+      "**/react-dom",
+      "**/react-is",
+      "**/react-router",
+      "**/react-router-dom",
+      "**/vue",
+      "**/vue-eslint-parser",
+      "**/vue-router",
+      "**/svelte",
+      "**/svelte-dev-helper"
     ]
   },
   "scripts": {
