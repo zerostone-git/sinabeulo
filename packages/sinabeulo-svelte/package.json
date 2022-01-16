@@ -12,10 +12,11 @@
   "private": true,
   "scripts": {
     "test": "jest",
+    "lint": "eslint src/**",
+    "svelte-check": "svelte-check",
+    "prebuild": "yarn lint && yarn svelte-check",
     "build": "webpack --env production && tsc --build tsconfig.build.json",
-    "serve": "webpack serve",
-    "lint": "eslint src/**/*",
-    "svelte-check": "svelte-check"
+    "serve": "webpack serve"
   },
   "dependencies": {
     "@sinabeulo/styles": "^0.0.1",

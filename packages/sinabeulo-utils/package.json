@@ -12,6 +12,8 @@
   "private": true,
   "scripts": {
     "test": "jest",
+    "lint": "eslint src/**",
+    "prebuild": "yarn lint",
     "build": "webpack --env production && tsc --build tsconfig.build.json"
   },
   "devDependencies": {

@@ -11,6 +11,8 @@
   "private": true,
   "scripts": {
     "test": "echo -e \"I don't test.\"",
+    "lint": "eslint src/**",
+    "prebuild": "yarn lint",
     "build": "webpack --env production",
     "serve": "webpack serve"
   },
