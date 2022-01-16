@@ -14,6 +14,7 @@
     "test": "jest",
     "lint": "eslint src/**",
     "svelte-check": "svelte-check",
+    "clean": "tsc --build tsconfig.build.json --clean",
     "prebuild": "yarn lint && yarn svelte-check",
     "build": "webpack --env production && tsc --build tsconfig.build.json",
     "serve": "webpack serve"
@@ -29,7 +30,6 @@
     "@babel/preset-typescript": "^7.16.7",
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/svelte": "^3.0.3",
-    "@tsconfig/svelte": "^3.0.0",
     "@types/jest": "^27.4.0",
     "@typescript-eslint/eslint-plugin": "^5.8.1",
     "@typescript-eslint/parser": "^5.8.1",
@@ -49,8 +49,9 @@
     "jest": "^27.4.5",
     "jest-transform-stub": "^2.0.0",
     "jsdom": "^19.0.0",
-    "mini-css-extract-plugin": "^2.4.5",
     "prettier": "^2.5.1",
+    "sass": "^1.45.2",
+    "sass-loader": "^12.4.0",
     "style-loader": "^3.3.1",
     "svelte-check": "^2.2.11",
     "svelte-jester": "^2.1.5",
@@ -58,6 +59,7 @@
     "svelte-preprocess": "^4.10.1",
     "typescript": "^4.5.4",
     "webpack": "^5.65.0",
-    "webpack-cli": "^4.9.1"
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^4.7.3"
   }
 }

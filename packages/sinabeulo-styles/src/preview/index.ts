@@ -1,3 +1,4 @@
+import '@fortawesome/fontawesome-free/scss/solid.scss';
 import {
   buttonClassNames,
   checkboxClassNames,

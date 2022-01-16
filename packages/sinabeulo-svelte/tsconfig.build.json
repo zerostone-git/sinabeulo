@@ -17,10 +17,10 @@
   },
   "references": [
     {
-      "path": "../sinabeulo-styles"
+      "path": "../sinabeulo-styles/tsconfig.build.json"
     },
     {
-      "path": "../sinabeulo-utils"
+      "path": "../sinabeulo-utils/tsconfig.build.json"
     }
   ],
   "include": ["src/**/*"],

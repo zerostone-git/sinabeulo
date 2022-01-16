@@ -15,7 +15,7 @@
   },
   "references": [
     {
-      "path": "../sinabeulo-utils"
+      "path": "../sinabeulo-utils/tsconfig.build.json"
     }
   ],
   "include": ["src/**/*"],

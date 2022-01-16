@@ -13,15 +13,15 @@ module.exports = function (env, args) {
     entry: {
       index: path.resolve(__dirname, 'src', 'index.ts'),
     },
+    externals: {
+      '@sinabeulo/utils': '@sinabeulo/utils',
+    },
     output: {
       filename: '[name].js',
       library: {
         type: 'umd',
       },
       path: path.resolve(__dirname, 'dist'),
-    },
-    externals: {
-      '@sinabeulo/utils': '@sinabeulo/utils',
     },
     module: {
       rules: [

@@ -1,6 +1,4 @@
 import './theme.scss';
-// eslint-disable-next-line import/no-extraneous-dependencies
-import '@fortawesome/fontawesome-free/scss/solid.scss';
 import {
   buttonClassNames,
   ButtonClassNames,

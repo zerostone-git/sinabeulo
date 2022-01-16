@@ -13,6 +13,7 @@
   "scripts": {
     "test": "jest",
     "lint": "eslint src/**",
+    "clean": "tsc --build tsconfig.build.json --clean",
     "prebuild": "yarn lint",
     "build": "webpack --env production && tsc --build tsconfig.build.json"
   },

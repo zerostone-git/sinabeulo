@@ -1,3 +1,5 @@
+// eslint-disable-next-line import/no-extraneous-dependencies
+import '@fortawesome/fontawesome-free/scss/solid.scss';
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import { Checkbox } from '..';

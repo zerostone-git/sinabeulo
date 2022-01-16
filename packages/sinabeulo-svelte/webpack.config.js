@@ -1,6 +1,5 @@
 const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const sveltePreprocess = require('svelte-preprocess');
@@ -16,6 +15,7 @@ module.exports = function (env, args) {
     },
     externals: {
       svelte: 'svelte',
+      'svelte/internal': 'svelte',
     },
     output: {
       filename: '[name].js',
@@ -42,7 +42,7 @@ module.exports = function (env, args) {
           },
         },
         {
-          test: /\.css$/i,
+          test: /\.((c|sa|sc)ss)$/i,
           use: [
             'style-loader',
             {
@@ -55,11 +55,17 @@ module.exports = function (env, args) {
                 importLoaders: 1,
               },
             },
+            {
+              loader: 'sass-loader',
+              options: {
+                implementation: require('sass'),
+              },
+            },
           ],
         },
       ],
     },
-    plugins: [new CleanWebpackPlugin(), new MiniCssExtractPlugin()],
+    plugins: [new CleanWebpackPlugin()],
     resolve: {
       modules: ['node_modules'],
       extensions: ['.js', '.jsx', '.ts', '.tsx', '.svelte'],
