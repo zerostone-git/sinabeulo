@@ -19,15 +19,15 @@ type CheckboxProps = {
    */
   classNames?: CheckboxClassNames;
   /**
-   * 체크박스의 옆에 표시할 문자열입니다.
-   */
-  label?: string;
-  /**
    * 체크박스가 비활성화되어 있는지 여부입니다.
    */
   disabled?: boolean;
   /**
-   * 체크 여부입니다. 제어 컴포넌트로 사용하려면 이 속성의 값을 지정해야 하고, 그렇지 않으면 비제어 컴포넌트로 사용됩니다.
+   * 체크박스의 옆에 표시할 문자열입니다.
+   */
+  label?: string;
+  /**
+   * 선택 여부입니다. 제어 컴포넌트로 사용하려면 이 속성의 값을 지정해야 하고, 그렇지 않으면 비제어 컴포넌트로 사용됩니다.
    */
   checked?: boolean;
   /**
@@ -43,7 +43,7 @@ type CheckboxProps = {
    */
   defaultIndeterminate?: boolean;
   /**
-   * 제어 컴포넌트로 사용될 때 선택 값이 변경되었을 때의 콜백입니다.
+   * 제어 컴포넌트로 사용될 때 선택 여부 값이 변경되었을 때의 콜백입니다.
    */
   onChange?: (
     e?: React.ChangeEvent<HTMLInputElement>,
@@ -60,8 +60,8 @@ const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
   (props: CheckboxProps, ref: React.ForwardedRef<HTMLInputElement>) => {
     const {
       classNames,
-      label,
       disabled,
+      label,
       checked,
       indeterminate,
       defaultChecked,
@@ -139,8 +139,8 @@ const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
 );
 Checkbox.defaultProps = {
   classNames: undefined,
+  disabled: false,
   label: undefined,
-  disabled: undefined,
   checked: undefined,
   indeterminate: undefined,
   defaultChecked: undefined,

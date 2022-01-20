@@ -19,6 +19,14 @@ const Checkbox = defineComponent({
       default: undefined,
     },
     /**
+     * 체크박스가 비활성화되어 있는지 여부입니다.
+     */
+    disabled: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
+    /**
      * 체크박스의 옆에 표시할 문자열입니다.
      */
     label: {
@@ -27,15 +35,7 @@ const Checkbox = defineComponent({
       default: undefined,
     },
     /**
-     * 체크박스가 비활성화되어 있는지 여부입니다.
-     */
-    disabled: {
-      type: Boolean,
-      required: false,
-      default: undefined,
-    },
-    /**
-     * 체크 여부입니다. 제어 컴포넌트로 사용하려면 이 속성의 값을 지정해야 하고, 그렇지 않으면 비제어 컴포넌트로 사용됩니다.
+     * 선택 여부입니다. 제어 컴포넌트로 사용하려면 이 속성의 값을 지정해야 하고, 그렇지 않으면 비제어 컴포넌트로 사용됩니다.
      */
     checked: {
       type: Boolean,

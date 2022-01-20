@@ -20,15 +20,15 @@
    */
   export let classNames = undefined as Partial<CheckboxClassNames> | undefined;
   /**
-   * 체크박스의 옆에 표시할 문자열입니다.
-   */
-  export let label = '';
-  /**
    * 체크박스가 비활성화되어 있는지 여부입니다.
    */
   export let disabled = false;
   /**
-   * 체크 여부입니다
+   * 체크박스의 옆에 표시할 문자열입니다.
+   */
+  export let label = '';
+  /**
+   * 선택 여부입니다
    */
   export let checked = false;
   /**
