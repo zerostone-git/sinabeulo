@@ -106,7 +106,7 @@ const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
     );
 
     // eslint-disable-next-line no-plusplus
-    const inputId = useConst(() => `checkbox-${checkboxId++}`);
+    const inputId = useConst(() => `SiCheckbox-${checkboxId++}`);
     const cn = useMemo(() => classNamesForCheckbox(classNames), [classNames]);
     return (
       <div

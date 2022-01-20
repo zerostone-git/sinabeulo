@@ -12,7 +12,7 @@
     window.__SI_CHECKBOX_NO = 1;
   }
   // eslint-disable-next-line no-undef, no-underscore-dangle, no-plusplus
-  const inputId = `checkbox-${window.__SI_CHECKBOX_NO++}`;
+  const inputId = `SiCheckbox-${window.__SI_CHECKBOX_NO++}`;
   const dispatch = createEventDispatcher();
 
   /**

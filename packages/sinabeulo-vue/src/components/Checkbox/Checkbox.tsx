@@ -80,7 +80,7 @@ const Checkbox = defineComponent({
       isControlled ? indeterminate.value : isIndeterminateIn.value
     );
     // eslint-disable-next-line no-plusplus
-    const inputId = `checkbox-${checkboxId++}`;
+    const inputId = `SiCheckbox-${checkboxId++}`;
 
     return {
       inputId,
