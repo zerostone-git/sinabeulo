@@ -18,6 +18,9 @@ import {
   radioClassNames,
   RadioClassNames,
   classNamesForRadio,
+  radioGroupClassNames,
+  RadioGroupClassNames,
+  classNamesForRadioGroup,
 } from './components/Radio';
 import {
   selectClassNames,
@@ -40,6 +43,7 @@ export {
   classNamesForCheckbox,
   classNamesForLayer,
   classNamesForRadio,
+  classNamesForRadioGroup,
   classNamesForSelect,
   classNamesForSelectItems,
   classNamesForTextField,
@@ -47,6 +51,7 @@ export {
   checkboxClassNames,
   layerClassNames,
   radioClassNames,
+  radioGroupClassNames,
   selectClassNames,
   selectItemsClassNames,
   textFieldClassNames,
@@ -56,6 +61,7 @@ export type {
   CheckboxClassNames,
   LayerClassNames,
   RadioClassNames,
+  RadioGroupClassNames,
   SelectClassNames,
   SelectItemsClassNames,
   TextFieldClassNames,
