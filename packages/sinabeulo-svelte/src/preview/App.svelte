@@ -2,6 +2,7 @@
   import { Checkbox } from '..';
   import ButtonPreview from './ButtonPreview.svelte';
   import CheckboxPreview from './CheckboxPreview.svelte';
+  import RadioGroupPreview from './RadioGroupPreview.svelte';
 
   let disabled = false;
 </script>
@@ -10,3 +11,4 @@
 <hr />
 <ButtonPreview {disabled} />
 <CheckboxPreview {disabled} />
+<RadioGroupPreview {disabled} />
