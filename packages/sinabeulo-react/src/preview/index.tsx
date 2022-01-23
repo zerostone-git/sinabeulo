@@ -5,6 +5,7 @@ import ReactDOM from 'react-dom';
 import { Checkbox } from '..';
 import ButtonPreview from './ButtonPreview';
 import CheckboxPreview from './CheckboxPreview';
+import RadioGroupPreview from './RadioGroupPreview';
 
 const container = document.createElement('div');
 document.body.appendChild(container);
@@ -21,6 +22,7 @@ function Preview(): JSX.Element {
       <hr />
       <ButtonPreview disabled={isDisabled} />
       <CheckboxPreview disabled={isDisabled} />
+      <RadioGroupPreview disabled={isDisabled} />
     </>
   );
 }
