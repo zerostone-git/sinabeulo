@@ -4,12 +4,13 @@ import { createApp, defineComponent } from 'vue';
 import { Checkbox } from '..';
 import ButtonPreview from './ButtonPreview';
 import CheckboxPreview from './CheckboxPreview';
+import RadioGroupPreview from './RadioGroupPreview';
 
 const container = document.createElement('div');
 document.body.appendChild(container);
 
 const Buttons = defineComponent({
-  components: { ButtonPreview, CheckboxPreview },
+  components: { ButtonPreview, CheckboxPreview, RadioGroupPreview },
   data() {
     return {
       isDisabled: false,
@@ -28,6 +29,7 @@ const Buttons = defineComponent({
         <hr />
         <ButtonPreview disabled={this.isDisabled} />
         <CheckboxPreview disabled={this.isDisabled} />
+        <RadioGroupPreview disabled={this.isDisabled} />
       </>
     );
   },
