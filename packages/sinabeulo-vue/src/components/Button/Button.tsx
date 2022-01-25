@@ -1,4 +1,4 @@
-import { defineComponent, PropType } from 'vue';
+import { defineComponent, PropType, toRefs } from 'vue';
 import { ButtonClassNames, classNamesForButton } from '@sinabeulo/styles';
 import { createClassName } from '@sinabeulo/utils';
 
@@ -17,16 +17,16 @@ const Button = defineComponent({
       default: undefined,
     },
     /**
-     * 버튼이 비활성화되어 있는지 여부입니다.
+     * 버튼이 일 순위인 버튼인지 여부입니다.
      */
-    checked: {
+    disabled: {
       type: Boolean,
       required: false,
     },
     /**
-     * 버튼이 일 순위인 버튼인지 여부입니다.
+     * 버튼이 비활성화되어 있는지 여부입니다.
      */
-    disabled: {
+    checked: {
       type: Boolean,
       required: false,
     },
@@ -39,39 +39,31 @@ const Button = defineComponent({
     },
   },
   emits: ['click'],
-  computed: {
-    cn() {
-      return classNamesForButton(this.classNames);
-    },
-  },
-  methods: {
-    handleClick(event: MouseEvent) {
-      if (this.disabled) {
+  setup(props, { emit, slots }) {
+    const { classNames, disabled, checked, primary } = toRefs(props);
+    const handleClick = (event: MouseEvent) => {
+      if (disabled.value) {
         return;
       }
-      this.$emit('click', event);
-    },
-  },
-  render() {
-    return (
+      emit('click', event);
+    };
+
+    const cn = classNamesForButton(classNames.value);
+    return () => (
       <button
         type="button"
         ref="refButton"
-        class={createClassName(this.cn.root, {
-          [this.cn.disabled]: this.disabled,
-          [this.cn.primary]: this.primary,
-          [this.cn.checked]: this.checked,
+        class={createClassName(cn.root, {
+          [cn.disabled]: disabled.value,
+          [cn.primary]: primary.value,
+          [cn.checked]: checked.value,
         })}
-        disabled={this.disabled}
-        onClick={this.handleClick}
+        disabled={disabled.value}
+        onClick={handleClick}
       >
-        <span class={this.cn.container}>
-          {this.$slots.icon && (
-            <span class={this.cn.icon}>{this.$slots.icon?.()}</span>
-          )}
-          {this.$slots.default && (
-            <span class={this.cn.text}>{this.$slots.default?.()}</span>
-          )}
+        <span class={cn.container}>
+          {slots.icon && <span class={cn.icon}>{slots.icon?.()}</span>}
+          {slots.default && <span class={cn.text}>{slots.default?.()}</span>}
         </span>
       </button>
     );

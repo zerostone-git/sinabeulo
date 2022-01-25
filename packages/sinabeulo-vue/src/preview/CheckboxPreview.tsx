@@ -1,4 +1,4 @@
-import { defineComponent } from 'vue';
+import { defineComponent, ref, toRefs } from 'vue';
 import { Checkbox } from '..';
 
 export default defineComponent({
@@ -9,20 +9,16 @@ export default defineComponent({
       required: false,
     },
   },
-  data() {
-    return {
-      isChecked: false,
-      isIndeterminate: true,
+  setup(props) {
+    const { disabled } = toRefs(props);
+    const isChecked = ref(false);
+    const isIndeterminate = ref(true);
+    const handleChange = (_?: Event, checked?: boolean) => {
+      isChecked.value = !!checked;
+      isIndeterminate.value = false;
     };
-  },
-  methods: {
-    handleChange(_?: Event, checked?: boolean) {
-      this.isChecked = !!checked;
-      this.isIndeterminate = false;
-    },
-  },
-  render() {
-    return (
+
+    return () => (
       <div
         style={{
           display: 'grid',
@@ -33,18 +29,18 @@ export default defineComponent({
         }}
       >
         <div style={{ gridRow: 1, gridColumn: 1 }}>
-          <Checkbox disabled={this.disabled} label="Uncontrolled" />
+          <Checkbox disabled={disabled.value} label="Uncontrolled" />
         </div>
         <div style={{ gridRow: 1, gridColumn: 2 }}>
           <Checkbox
-            disabled={this.disabled}
+            disabled={disabled.value}
             defaultChecked
             label="Uncontrolled"
           />
         </div>
         <div style={{ gridRow: 1, gridColumn: 3 }}>
           <Checkbox
-            disabled={this.disabled}
+            disabled={disabled.value}
             label="Uncontrolled"
             defaultIndeterminate
           />
@@ -52,26 +48,26 @@ export default defineComponent({
 
         <div style={{ gridRow: 2, gridColumn: 1 }}>
           <Checkbox
-            disabled={this.disabled}
+            disabled={disabled.value}
             label="Controlled"
-            v-model:checked={this.isChecked}
+            v-model:checked={isChecked.value}
           />
         </div>
         <div style={{ gridRow: 2, gridColumn: 2 }}>
           <Checkbox
-            disabled={this.disabled}
+            disabled={disabled.value}
             label="Controlled"
-            checked={this.isChecked}
-            onChange={this.handleChange}
+            checked={isChecked.value}
+            onChange={handleChange}
           />
         </div>
         <div style={{ gridRow: 2, gridColumn: 3 }}>
           <Checkbox
-            disabled={this.disabled}
+            disabled={disabled.value}
             label="Controlled"
-            checked={this.isChecked}
-            indeterminate={this.isIndeterminate}
-            onChange={this.handleChange}
+            checked={isChecked.value}
+            indeterminate={isIndeterminate.value}
+            onChange={handleChange}
           />
         </div>
       </div>

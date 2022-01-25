@@ -2,6 +2,7 @@ const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
+const webpack = require('webpack');
 
 module.exports = function (env, args) {
   const isServe = env.WEBPACK_SERVE;
@@ -53,7 +54,13 @@ module.exports = function (env, args) {
         },
       ],
     },
-    plugins: [new CleanWebpackPlugin()],
+    plugins: [
+      new CleanWebpackPlugin(),
+      new webpack.DefinePlugin({
+        __VUE_OPTIONS_API__: JSON.stringify(false),
+        __VUE_PROD_DEVTOOLS__: JSON.stringify(false),
+      }),
+    ],
     resolve: {
       modules: ['node_modules'],
       extensions: ['.js', '.jsx', '.ts', '.tsx'],

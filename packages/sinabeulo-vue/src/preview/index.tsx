@@ -1,6 +1,6 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 import '@fortawesome/fontawesome-free/scss/solid.scss';
-import { createApp, defineComponent } from 'vue';
+import { createApp, defineComponent, ref } from 'vue';
 import { Checkbox } from '..';
 import ButtonPreview from './ButtonPreview';
 import CheckboxPreview from './CheckboxPreview';
@@ -11,25 +11,22 @@ document.body.appendChild(container);
 
 const Buttons = defineComponent({
   components: { ButtonPreview, CheckboxPreview, RadioGroupPreview },
-  data() {
-    return {
-      isDisabled: false,
-    };
-  },
-  render() {
-    return (
+  setup() {
+    const isDisabled = ref(false);
+
+    return () => (
       <>
         <Checkbox
           label="Disabled"
-          checked={this.isDisabled}
+          checked={isDisabled.value}
           onChange={(e?: Event, checked?: boolean): void => {
-            this.isDisabled = !!checked;
+            isDisabled.value = !!checked;
           }}
         />
         <hr />
-        <ButtonPreview disabled={this.isDisabled} />
-        <CheckboxPreview disabled={this.isDisabled} />
-        <RadioGroupPreview disabled={this.isDisabled} />
+        <ButtonPreview disabled={isDisabled.value} />
+        <CheckboxPreview disabled={isDisabled.value} />
+        <RadioGroupPreview disabled={isDisabled.value} />
       </>
     );
   },

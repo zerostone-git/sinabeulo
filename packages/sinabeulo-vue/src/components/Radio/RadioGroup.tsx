@@ -1,4 +1,4 @@
-import { defineComponent, PropType } from 'vue';
+import { defineComponent, PropType, toRefs } from 'vue';
 import {
   RadioClassNames,
   RadioGroupClassNames,
@@ -66,6 +66,7 @@ const RadioGroup = defineComponent({
     items: {
       type: Array as PropType<RadioGroupItem[]>,
       required: true,
+      default: () => [],
     },
     /**
      * 라디오 그룹의 선택 값입니다.
@@ -77,34 +78,30 @@ const RadioGroup = defineComponent({
     },
   },
   emits: ['change', 'update:selectedValue'],
-  computed: {
-    cn() {
-      return classNamesForRadioGroup(this.classNames);
-    },
-  },
-  methods: {
-    handleCheck(e: Event, value?: string | number) {
-      if (this.disabled) {
+  setup(props, { emit }) {
+    const { classNames, disabled, name, items, selectedValue } = toRefs(props);
+    const handleCheck = (e: Event, value?: string | number) => {
+      if (disabled.value) {
         return;
       }
-      const item = this.items.find((i) => i.value === value);
-      this.$emit('change', e, item);
-      this.$emit('update:selectedValue', item?.value);
-    },
-  },
-  render() {
-    return (
-      <div class={this.cn.root}>
-        {this.items.map((item) => (
+      const item = items.value.find((i) => i.value === value);
+      emit('change', e, item);
+      emit('update:selectedValue', item?.value);
+    };
+
+    const cn = classNamesForRadioGroup(classNames.value);
+    return () => (
+      <div class={cn.root}>
+        {items.value.map((item) => (
           <Radio
             key={item.value}
             classNames={item.classNames}
-            disabled={this.disabled || item.disabled}
+            disabled={disabled.value || item.disabled}
             label={item.label}
-            name={this.name}
+            name={name.value}
             value={item.value}
-            checked={item.value === this.selectedValue}
-            onCheck={this.handleCheck}
+            checked={item.value === selectedValue.value}
+            onCheck={handleCheck}
           />
         ))}
       </div>

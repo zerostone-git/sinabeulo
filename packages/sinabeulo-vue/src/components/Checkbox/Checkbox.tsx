@@ -68,73 +68,65 @@ const Checkbox = defineComponent({
     },
   },
   emits: ['change', 'update:checked'],
-  setup(props) {
-    const { checked, indeterminate } = toRefs(props);
-    const isControlled = props.checked !== undefined;
-    const isCheckedIn = ref(props.defaultChecked);
-    const isIndeterminateIn = ref(props.defaultIndeterminate);
+  setup(props, { emit }) {
+    const {
+      classNames,
+      disabled,
+      label,
+      checked,
+      indeterminate,
+      defaultChecked,
+      defaultIndeterminate,
+    } = toRefs(props);
+    const isControlled = checked.value !== undefined;
+    const isCheckedIn = ref(defaultChecked.value);
+    const isIndeterminateIn = ref(defaultIndeterminate.value);
     const isChecked = computed(() =>
       isControlled ? checked.value : isCheckedIn.value
     );
     const isIndeterminate = computed(() =>
       isControlled ? indeterminate.value : isIndeterminateIn.value
     );
-    // eslint-disable-next-line no-plusplus
-    const inputId = `SiCheckbox-${checkboxId++}`;
-
-    return {
-      inputId,
-      isControlled,
-      isCheckedIn,
-      isIndeterminateIn,
-      isChecked,
-      isIndeterminate,
-    };
-  },
-  computed: {
-    cn() {
-      return classNamesForCheckbox(this.classNames);
-    },
-  },
-  methods: {
-    handleChange(e: Event) {
-      if (this.disabled) {
+    const handleChange = (e: Event) => {
+      if (disabled.value) {
         return;
       }
-      if (this.isControlled) {
-        this.$emit('change', e, (e.target as HTMLInputElement).checked);
-        this.$emit('update:checked', (e.target as HTMLInputElement).checked);
+      if (isControlled) {
+        emit('change', e, (e.target as HTMLInputElement).checked);
+        emit('update:checked', (e.target as HTMLInputElement).checked);
       } else {
-        this.isCheckedIn = !this.isChecked;
-        this.isIndeterminateIn = false;
+        isCheckedIn.value = !isChecked.value;
+        isIndeterminateIn.value = false;
       }
-    },
-  },
-  render() {
-    return (
+    };
+
+    // eslint-disable-next-line no-plusplus
+    const inputId = `SiCheckbox-${checkboxId++}`;
+    const cn = classNamesForCheckbox(classNames.value);
+    return () => (
       <div
-        class={createClassName(this.cn.root, {
-          [this.cn.disabled]: !!this.disabled,
-          [this.cn.checked]: !!this.isChecked && !this.isIndeterminate,
-          [this.cn.indeterminate]: !!this.isIndeterminate,
+        class={createClassName(cn.root, {
+          [cn.disabled]: !!disabled.value,
+          [cn.checked]: !!isChecked.value && !isIndeterminate.value,
+          [cn.indeterminate]: !!isIndeterminate.value,
         })}
       >
         <input
           ref="refInput"
-          class={this.cn.input}
+          class={cn.input}
           type="checkbox"
-          id={this.inputId}
-          disabled={this.disabled}
-          checked={this.isChecked}
-          onChange={this.handleChange}
+          id={inputId}
+          disabled={disabled.value}
+          checked={isChecked.value}
+          onChange={handleChange}
         />
-        <label class={this.cn.container} for={this.inputId}>
-          {this.isIndeterminate ? (
-            <span class={this.cn.icon}>&#xf0c8;</span>
+        <label class={cn.container} for={inputId}>
+          {isIndeterminate.value ? (
+            <span class={cn.icon}>&#xf0c8;</span>
           ) : (
-            <span class={this.cn.icon}>&#xf00c;</span>
+            <span class={cn.icon}>&#xf00c;</span>
           )}
-          <span class={this.cn.text}>{this.label}</span>
+          <span class={cn.text}>{label.value}</span>
         </label>
       </div>
     );

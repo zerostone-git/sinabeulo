@@ -1,4 +1,4 @@
-import { defineComponent } from 'vue';
+import { defineComponent, toRefs } from 'vue';
 import { Button } from '..';
 
 export default defineComponent({
@@ -9,8 +9,10 @@ export default defineComponent({
       required: false,
     },
   },
-  render() {
-    return (
+  setup(props) {
+    const { disabled } = toRefs(props);
+
+    return () => (
       <div>
         <div
           style={{
@@ -22,11 +24,11 @@ export default defineComponent({
           }}
         >
           <div style={{ gridRow: 1, gridColumn: 1 }}>
-            <Button disabled={this.disabled}>Standard</Button>
+            <Button disabled={disabled.value}>Standard</Button>
           </div>
           <div style={{ gridRow: 1, gridColumn: 2 }}>
             <Button
-              disabled={this.disabled}
+              disabled={disabled.value}
               v-slots={{ icon: () => <span>&#128513;</span> }}
             >
               Standard
@@ -34,19 +36,19 @@ export default defineComponent({
           </div>
           <div style={{ gridRow: 1, gridColumn: 3 }}>
             <Button
-              disabled={this.disabled}
+              disabled={disabled.value}
               v-slots={{ icon: () => <span>&#128513;</span> }}
             />
           </div>
 
           <div style={{ gridRow: 2, gridColumn: 1 }}>
-            <Button disabled={this.disabled} primary>
+            <Button disabled={disabled.value} primary>
               Primary
             </Button>
           </div>
           <div style={{ gridRow: 2, gridColumn: 2 }}>
             <Button
-              disabled={this.disabled}
+              disabled={disabled.value}
               primary
               v-slots={{ icon: () => <span>&#128513;</span> }}
             >
@@ -55,20 +57,20 @@ export default defineComponent({
           </div>
           <div style={{ gridRow: 2, gridColumn: 3 }}>
             <Button
-              disabled={this.disabled}
+              disabled={disabled.value}
               primary
               v-slots={{ icon: () => <span>&#128513;</span> }}
             />
           </div>
 
           <div style={{ gridRow: 3, gridColumn: 1 }}>
-            <Button disabled={this.disabled} checked>
+            <Button disabled={disabled.value} checked>
               Checked
             </Button>
           </div>
           <div style={{ gridRow: 3, gridColumn: 2 }}>
             <Button
-              disabled={this.disabled}
+              disabled={disabled.value}
               checked
               v-slots={{ icon: () => <span>&#128513;</span> }}
             >
@@ -77,7 +79,7 @@ export default defineComponent({
           </div>
           <div style={{ gridRow: 3, gridColumn: 3 }}>
             <Button
-              disabled={this.disabled}
+              disabled={disabled.value}
               checked
               v-slots={{ icon: () => <span>&#128513;</span> }}
             />

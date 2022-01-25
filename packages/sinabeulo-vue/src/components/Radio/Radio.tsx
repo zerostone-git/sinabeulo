@@ -1,4 +1,4 @@
-import { defineComponent, PropType } from 'vue';
+import { defineComponent, PropType, toRefs } from 'vue';
 import { RadioClassNames, classNamesForRadio } from '@sinabeulo/styles';
 import { createClassName } from '@sinabeulo/utils';
 
@@ -60,49 +60,39 @@ const Radio = defineComponent({
     },
   },
   emits: ['check'],
-  setup() {
-    // eslint-disable-next-line no-plusplus
-    const inputId = `SiRadio-${radioId++}`;
-
-    return {
-      inputId,
-    };
-  },
-  computed: {
-    cn() {
-      return classNamesForRadio(this.classNames);
-    },
-  },
-  methods: {
-    handleChange(e: Event) {
-      if (this.disabled) {
+  setup(props, { emit }) {
+    const { classNames, disabled, label, name, value, checked } = toRefs(props);
+    const handleChange = (e: Event) => {
+      if (disabled.value) {
         return;
       }
-      this.$emit('check', e, this.value);
-    },
-  },
-  render() {
-    return (
+      emit('check', e, value.value);
+    };
+
+    // eslint-disable-next-line no-plusplus
+    const inputId = `SiRadio-${radioId++}`;
+    const cn = classNamesForRadio(classNames.value);
+    return () => (
       <div
-        class={createClassName(this.cn.root, {
-          [this.cn.disabled]: !!this.disabled,
-          [this.cn.checked]: !!this.checked,
+        class={createClassName(cn.root, {
+          [cn.disabled]: !!disabled.value,
+          [cn.checked]: !!checked.value,
         })}
       >
         <input
           ref="refInput"
-          class={this.cn.input}
+          class={cn.input}
           type="radio"
-          id={this.inputId}
-          name={this.name}
-          value={this.value}
-          disabled={this.disabled}
-          checked={this.checked}
-          onChange={this.handleChange}
+          id={inputId}
+          name={name.value}
+          value={value.value}
+          disabled={disabled.value}
+          checked={checked.value}
+          onChange={handleChange}
         />
-        <label class={this.cn.container} for={this.inputId}>
-          <span class={this.cn.icon}>&#xf111;</span>
-          <span class={this.cn.text}>{this.label}</span>
+        <label class={cn.container} for={inputId}>
+          <span class={cn.icon}>&#xf111;</span>
+          <span class={cn.text}>{label.value}</span>
         </label>
       </div>
     );
