@@ -15,15 +15,15 @@ import useConst from '../../hooks/useConst';
  */
 type CheckboxProps = {
   /**
-   * 체크박스의 CSS 클래스 이름입니다.
+   * CSS 클래스 이름입니다.
    */
-  classNames?: CheckboxClassNames;
+  classNames?: Partial<CheckboxClassNames>;
   /**
-   * 체크박스가 비활성화되어 있는지 여부입니다.
+   * 비활성화되어 있는지 여부입니다.
    */
   disabled?: boolean;
   /**
-   * 체크박스의 옆에 표시할 문자열입니다.
+   * 표시할 문자열입니다.
    */
   label?: string;
   /**
@@ -60,7 +60,7 @@ const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
   (props: CheckboxProps, ref: React.ForwardedRef<HTMLInputElement>) => {
     const {
       classNames,
-      disabled,
+      disabled = false,
       label,
       checked,
       indeterminate,
@@ -78,16 +78,16 @@ const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
       }
     }, [ref]);
 
-    const isControlled = useConst(checked !== undefined);
+    const isControlled = useConst(props.checked !== undefined);
     const [isCheckedIn, setIsCheckedIn] = useState(defaultChecked);
     const [isIndeterminateIn, setIsIndeterminateIn] =
       useState(defaultIndeterminate);
     const isChecked = useMemo(
-      () => (isControlled ? checked : isCheckedIn),
+      () => (isControlled ? checked : isCheckedIn) ?? false,
       [checked, isCheckedIn, isControlled]
     );
     const isIndeterminate = useMemo(
-      () => (isControlled ? indeterminate : isIndeterminateIn),
+      () => (isControlled ? indeterminate : isIndeterminateIn) ?? false,
       [indeterminate, isControlled, isIndeterminateIn]
     );
     const handleChange = useCallback(
@@ -111,9 +111,9 @@ const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
     return (
       <div
         className={createClassName(cn.root, {
-          [cn.disabled]: !!disabled,
-          [cn.checked]: !!isChecked && !isIndeterminate,
-          [cn.indeterminate]: !!isIndeterminate,
+          [cn.disabled]: disabled,
+          [cn.checked]: isChecked && !isIndeterminate,
+          [cn.indeterminate]: isIndeterminate,
         })}
       >
         <input

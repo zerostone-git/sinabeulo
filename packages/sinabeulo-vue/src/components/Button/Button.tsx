@@ -9,7 +9,7 @@ const Button = defineComponent({
   name: 'SiButton',
   props: {
     /**
-     * 버튼의 CSS 클래스 이름입니다.
+     * CSS 클래스 이름입니다.
      */
     classNames: {
       type: Object as PropType<Partial<ButtonClassNames>>,
@@ -17,25 +17,28 @@ const Button = defineComponent({
       default: undefined,
     },
     /**
-     * 버튼이 일 순위인 버튼인지 여부입니다.
+     * 비활성화되어 있는지 여부입니다.
      */
     disabled: {
       type: Boolean,
       required: false,
+      default: false,
     },
     /**
-     * 버튼이 비활성화되어 있는지 여부입니다.
-     */
-    checked: {
-      type: Boolean,
-      required: false,
-    },
-    /**
-     * 버튼이 체크되어 있는지 여부입니다.
+     * 일 순위인 버튼인지 여부입니다.
      */
     primary: {
       type: Boolean,
       required: false,
+      default: false,
+    },
+    /**
+     * 체크되어 있는지 여부입니다.
+     */
+    checked: {
+      type: Boolean,
+      required: false,
+      default: false,
     },
   },
   emits: ['click'],

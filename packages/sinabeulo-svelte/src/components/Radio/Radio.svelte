@@ -13,23 +13,23 @@
   const dispatch = createEventDispatcher();
 
   /**
-   * 라디오의 CSS 클래스 이름입니다.
+   * CSS 클래스 이름입니다.
    */
   export let classNames = undefined as Partial<RadioClassNames> | undefined;
   /**
-   * 라디오가 비활성화되어 있는지 여부입니다.
+   * 비활성화되어 있는지 여부입니다.
    */
   export let disabled = false;
   /**
-   * 라디오의 옆에 표시할 문자열입니다.
+   * 옆에 표시할 문자열입니다.
    */
   export let label = '';
   /**
-   * 라디오가 속하는 그룹 이름입니다.
+   * 속하는 그룹 이름입니다.
    */
   export let name = undefined as string | undefined;
   /**
-   * 라디오의 값입니다.
+   * 값입니다.
    */
   export let value = undefined as string | number | undefined;
   /**

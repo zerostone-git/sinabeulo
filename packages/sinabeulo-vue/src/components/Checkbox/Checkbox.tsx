@@ -11,7 +11,7 @@ const Checkbox = defineComponent({
   name: 'SiCheckbox',
   props: {
     /**
-     * 체크박스의 CSS 클래스 이름입니다.
+     * CSS 클래스 이름입니다.
      */
     classNames: {
       type: Object as PropType<Partial<CheckboxClassNames>>,
@@ -19,7 +19,7 @@ const Checkbox = defineComponent({
       default: undefined,
     },
     /**
-     * 체크박스가 비활성화되어 있는지 여부입니다.
+     * 비활성화되어 있는지 여부입니다.
      */
     disabled: {
       type: Boolean,
@@ -27,7 +27,7 @@ const Checkbox = defineComponent({
       default: false,
     },
     /**
-     * 체크박스의 옆에 표시할 문자열입니다.
+     * 표시할 문자열입니다.
      */
     label: {
       type: String,
@@ -81,11 +81,12 @@ const Checkbox = defineComponent({
     const isControlled = checked.value !== undefined;
     const isCheckedIn = ref(defaultChecked.value);
     const isIndeterminateIn = ref(defaultIndeterminate.value);
-    const isChecked = computed(() =>
-      isControlled ? checked.value : isCheckedIn.value
+    const isChecked = computed(
+      () => (isControlled ? checked.value : isCheckedIn.value) ?? false
     );
-    const isIndeterminate = computed(() =>
-      isControlled ? indeterminate.value : isIndeterminateIn.value
+    const isIndeterminate = computed(
+      () =>
+        (isControlled ? indeterminate.value : isIndeterminateIn.value) ?? false
     );
     const handleChange = (e: Event) => {
       if (disabled.value) {
@@ -106,9 +107,9 @@ const Checkbox = defineComponent({
     return () => (
       <div
         class={createClassName(cn.root, {
-          [cn.disabled]: !!disabled.value,
-          [cn.checked]: !!isChecked.value && !isIndeterminate.value,
-          [cn.indeterminate]: !!isIndeterminate.value,
+          [cn.disabled]: disabled.value,
+          [cn.checked]: isChecked.value && !isIndeterminate.value,
+          [cn.indeterminate]: isIndeterminate.value,
         })}
       >
         <input

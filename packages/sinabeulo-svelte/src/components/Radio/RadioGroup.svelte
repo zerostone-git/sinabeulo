@@ -10,25 +10,25 @@
   const dispatch = createEventDispatcher();
 
   /**
-   * 라디오 그룹의 CSS 클래스 이름입니다.
+   * CSS 클래스 이름입니다.
    */
   export let classNames = undefined as
     | Partial<RadioGroupClassNames>
     | undefined;
   /**
-   * 라디오 그룹이 비활성화되어 있는지 여부입니다.
+   * 비활성화되어 있는지 여부입니다.
    */
   export let disabled = false;
   /**
-   * 라디오 그룹 이름입니다.
+   * 이름입니다.
    */
   export let name: string;
   /**
-   * 라디오 그룹에 표시할 아이템 목록입니다.
+   * 표시할 아이템 목록입니다.
    */
   export let items: RadioGroupItem[];
   /**
-   * 라디오 그룹의 선택 값입니다.
+   * 선택 값입니다.
    */
   export let selectedValue = undefined as string | number | undefined;
 

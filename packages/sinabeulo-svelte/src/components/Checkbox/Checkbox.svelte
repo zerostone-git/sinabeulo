@@ -16,19 +16,19 @@
   const dispatch = createEventDispatcher();
 
   /**
-   * 체크박스의 CSS 클래스 이름입니다.
+   * CSS 클래스 이름입니다.
    */
   export let classNames = undefined as Partial<CheckboxClassNames> | undefined;
   /**
-   * 체크박스가 비활성화되어 있는지 여부입니다.
+   * 비활성화되어 있는지 여부입니다.
    */
   export let disabled = false;
   /**
-   * 체크박스의 옆에 표시할 문자열입니다.
+   * 표시할 문자열입니다.
    */
   export let label = '';
   /**
-   * 선택 여부입니다
+   * 선택 여부입니다.
    */
   export let checked = false;
   /**

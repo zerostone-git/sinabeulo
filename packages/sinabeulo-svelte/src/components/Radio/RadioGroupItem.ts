@@ -7,7 +7,7 @@ export type RadioGroupItem = {
   /**
    * 라디오의 CSS 클래스 이름입니다.
    */
-  classNames?: RadioClassNames;
+  classNames?: Partial<RadioClassNames>;
   /**
    * 라디오가 비활성화되어 있는지 여부입니다.
    */

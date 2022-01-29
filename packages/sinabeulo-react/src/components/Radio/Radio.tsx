@@ -14,23 +14,23 @@ import useConst from '../../hooks/useConst';
  */
 type RadioProps = {
   /**
-   * 라디오의 CSS 클래스 이름입니다.
+   * CSS 클래스 이름입니다.
    */
-  classNames?: RadioClassNames;
+  classNames?: Partial<RadioClassNames>;
   /**
-   * 라디오가 비활성화되어 있는지 여부입니다.
+   * 비활성화되어 있는지 여부입니다.
    */
   disabled?: boolean;
   /**
-   * 라디오의 옆에 표시할 문자열입니다.
+   * 옆에 표시할 문자열입니다.
    */
   label?: string;
   /**
-   * 라디오가 속하는 그룹 이름입니다.
+   * 속하는 그룹 이름입니다.
    */
   name?: string;
   /**
-   * 라디오의 값입니다.
+   * 값입니다.
    */
   value?: string | number;
   /**
@@ -38,7 +38,7 @@ type RadioProps = {
    */
   checked?: boolean;
   /**
-   * 라디오를 선택할 때의 콜백입니다.
+   * 선택할 때의 콜백입니다.
    */
   onCheck: (
     e?: React.ChangeEvent<HTMLInputElement>,

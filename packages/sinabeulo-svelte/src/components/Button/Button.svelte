@@ -6,9 +6,21 @@
   } from '@sinabeulo/styles';
   import { createClassName } from '@sinabeulo/utils';
 
+  /**
+   * CSS 클래스 이름입니다.
+   */
   export let classNames = undefined as Partial<ButtonClassNames> | undefined;
+  /**
+   * 비활성화되어 있는지 여부입니다.
+   */
   export let disabled = false;
+  /**
+   * 일 순위인 버튼인지 여부입니다.
+   */
   export let primary = false;
+  /**
+   * 체크되어 있는지 여부입니다.
+   */
   export let checked = false;
 
   $: cn = classNamesForButton(classNames);
@@ -18,7 +30,7 @@
     if (disabled) {
       return;
     }
-    dispatch('click', e);
+    dispatch('click', { origin: e });
   }
 </script>
 

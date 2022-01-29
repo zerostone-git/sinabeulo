@@ -13,27 +13,27 @@ import { createClassName } from '@sinabeulo/utils';
  */
 type ButtonProps = React.PropsWithChildren<{
   /**
-   * 버튼의 CSS 클래스 이름입니다.
+   * CSS 클래스 이름입니다.
    */
   classNames?: Partial<ButtonClassNames>;
   /**
-   * 버튼이 비활성화되어 있는지 여부입니다.
+   * 비활성화되어 있는지 여부입니다.
    */
   disabled?: boolean;
   /**
-   * 버튼이 일 순위인 버튼인지 여부입니다.
+   * 일 순위인 버튼인지 여부입니다.
    */
   primary?: boolean;
   /**
-   * 버튼이 체크되어 있는지 여부입니다.
+   * 체크되어 있는지 여부입니다.
    */
   checked?: boolean;
   /**
-   * 버튼에 표시할 아이콘입니다.
+   * 표시할 아이콘입니다.
    */
   icon?: React.ReactNode;
   /**
-   * 버튼이 클릭될 때의 콜백입니다.
+   * 클릭될 때의 콜백입니다.
    */
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
 }>;
@@ -95,9 +95,9 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 );
 Button.defaultProps = {
   classNames: undefined,
-  disabled: undefined,
-  primary: undefined,
-  checked: undefined,
+  disabled: false,
+  primary: false,
+  checked: false,
   icon: undefined,
   onClick: undefined,
 };

@@ -13,7 +13,7 @@ type RadioGroupItem = {
   /**
    * 라디오의 CSS 클래스 이름입니다.
    */
-  classNames?: RadioClassNames;
+  classNames?: Partial<RadioClassNames>;
   /**
    * 라디오가 비활성화되어 있는지 여부입니다.
    */
@@ -38,7 +38,7 @@ const RadioGroup = defineComponent({
   },
   props: {
     /**
-     * 라디오 그룹의 CSS 클래스 이름입니다.
+     * CSS 클래스 이름입니다.
      */
     classNames: {
       type: Object as PropType<Partial<RadioGroupClassNames>>,
@@ -46,7 +46,7 @@ const RadioGroup = defineComponent({
       default: undefined,
     },
     /**
-     * 라디오 그룹이 비활성화되어 있는지 여부입니다.
+     * 비활성화되어 있는지 여부입니다.
      */
     disabled: {
       type: Boolean,
@@ -54,22 +54,21 @@ const RadioGroup = defineComponent({
       default: false,
     },
     /**
-     * 라디오 그룹 이름입니다.
+     * 이름입니다.
      */
     name: {
       type: String,
       required: true,
     },
     /**
-     * 라디오 그룹에 표시할 아이템 목록입니다.
+     * 표시할 아이템 목록입니다.
      */
     items: {
       type: Array as PropType<RadioGroupItem[]>,
       required: true,
-      default: () => [],
     },
     /**
-     * 라디오 그룹의 선택 값입니다.
+     * 선택 값입니다.
      */
     selectedValue: {
       type: [String, Number] as PropType<string | number>,
@@ -92,18 +91,19 @@ const RadioGroup = defineComponent({
     const cn = classNamesForRadioGroup(classNames.value);
     return () => (
       <div class={cn.root}>
-        {items.value.map((item) => (
-          <Radio
-            key={item.value}
-            classNames={item.classNames}
-            disabled={disabled.value || item.disabled}
-            label={item.label}
-            name={name.value}
-            value={item.value}
-            checked={item.value === selectedValue.value}
-            onCheck={handleCheck}
-          />
-        ))}
+        {items &&
+          items.value.map((item) => (
+            <Radio
+              key={item.value}
+              classNames={item.classNames}
+              disabled={disabled.value || item.disabled}
+              label={item.label}
+              name={name.value}
+              value={item.value}
+              checked={item.value === selectedValue.value}
+              onCheck={handleCheck}
+            />
+          ))}
       </div>
     );
   },

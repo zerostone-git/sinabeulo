@@ -11,7 +11,7 @@ const Radio = defineComponent({
   name: 'SiRadio',
   props: {
     /**
-     * 라디오의 CSS 클래스 이름입니다.
+     * CSS 클래스 이름입니다.
      */
     classNames: {
       type: Object as PropType<Partial<RadioClassNames>>,
@@ -19,7 +19,7 @@ const Radio = defineComponent({
       default: undefined,
     },
     /**
-     * 라디오가 비활성화되어 있는지 여부입니다.
+     * 비활성화되어 있는지 여부입니다.
      */
     disabled: {
       type: Boolean,
@@ -27,7 +27,7 @@ const Radio = defineComponent({
       default: false,
     },
     /**
-     * 라디오의 옆에 표시할 문자열입니다.
+     * 옆에 표시할 문자열입니다.
      */
     label: {
       type: String,
@@ -35,7 +35,7 @@ const Radio = defineComponent({
       default: undefined,
     },
     /**
-     * 라디오가 속하는 그룹 이름입니다.
+     * 속하는 그룹 이름입니다.
      */
     name: {
       type: String,
@@ -43,7 +43,7 @@ const Radio = defineComponent({
       default: undefined,
     },
     /**
-     * 라디오의 값입니다.
+     * 값입니다.
      */
     value: {
       type: [String, Number] as PropType<string | number>,

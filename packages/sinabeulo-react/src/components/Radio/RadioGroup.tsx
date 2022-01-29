@@ -18,23 +18,23 @@ type RadioGroupItem = Pick<
  */
 type RadioGroupProps = {
   /**
-   * 라디오 그룹의 CSS 클래스 이름입니다.
+   * CSS 클래스 이름입니다.
    */
-  classNames?: RadioGroupClassNames;
+  classNames?: Partial<RadioGroupClassNames>;
   /**
-   * 라디오 그룹이 비활성화되어 있는지 여부입니다.
+   * 비활성화되어 있는지 여부입니다.
    */
   disabled?: boolean;
   /**
-   * 라디오 그룹 이름입니다.
+   * 이름입니다.
    */
   name: string;
   /**
-   * 라디오 그룹에 표시할 아이템 목록입니다.
+   * 표시할 아이템 목록입니다.
    */
   items: RadioGroupItem[];
   /**
-   * 라디오 그룹의 선택 값입니다.
+   * 선택 값입니다.
    */
   selectedValue?: string | number;
   /**
@@ -78,18 +78,19 @@ function RadioGroup(props: RadioGroupProps): React.ReactElement {
   const cn = useMemo(() => classNamesForRadioGroup(classNames), [classNames]);
   return (
     <div className={cn.root}>
-      {items.map((item) => (
-        <Radio
-          key={item.value}
-          classNames={item.classNames}
-          disabled={disabled || item.disabled}
-          label={item.label}
-          name={name}
-          value={item.value}
-          checked={item.value === selectedValue}
-          onCheck={handleCheck}
-        />
-      ))}
+      {items &&
+        items.map((item) => (
+          <Radio
+            key={item.value}
+            classNames={item.classNames}
+            disabled={disabled || item.disabled}
+            label={item.label}
+            name={name}
+            value={item.value}
+            checked={item.value === selectedValue}
+            onCheck={handleCheck}
+          />
+        ))}
     </div>
   );
 }
