@@ -1,0 +1,104 @@
+.root {
+  --buttonBackground: var(--white);
+  --buttonBackgroundHovered: var(--neutralLighter);
+  --buttonBackgroundPressed: var(--neutralLight);
+  --buttonBackgroundDisabled: var(--neutralLighterAlt);
+
+  --buttonBorder: var(--neutralTertiary);
+  --buttonBorderHovered: var(--neutralTertiary);
+  --buttonBorderPressed: var(--neutralTertiary);
+  --buttonBorderDisabled: var(--neutralLighter);
+
+  --buttonText: var(--neutralPrimaryAlt);
+  --buttonTextHovered: var(--neutralDark);
+  --buttonTextPressed: var(--neutralDark);
+  --buttonTextDisabled: var(--neutralTertiaryAlt);
+
+  background-color: var(--buttonBackground);
+  border: 1px solid var(--buttonBorder);
+  border-radius: 2px;
+  box-sizing: border-box;
+  color: var(--buttonText);
+  cursor: pointer;
+  display: inline-block;
+  font-family: var(--font-family-m);
+  font-size: var(--font-size-m);
+  font-weight: var(--font-weight-m);
+  height: var(--font-size-xxxxxl);
+  line-height: calc(var(--font-size-xxxxxl) - 2px);
+  outline: transparent;
+  padding: 0px var(--space-s);
+  position: relative;
+  text-decoration: none;
+  text-align: center;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+
+  &:hover:not(.disabled) {
+    background-color: var(--buttonBackgroundHovered);
+    border-color: var(--buttonBorderHovered);
+    color: var(--buttonTextHovered);
+  }
+  &:active:not(.disabled) {
+    background-color: var(--buttonBackgroundPressed);
+    border-color: var(--buttonBorderPressed);
+    color: var(--buttonTextPressed);
+  }
+  &.disabled {
+    background-color: var(--buttonBackgroundDisabled);
+    border-color: var(--buttonBorderDisabled);
+    color: var(--buttonTextDisabled);
+    cursor: default;
+  }
+  * {
+    box-sizing: border-box;
+  }
+}
+
+.primary {
+  --buttonBackground: var(--themePrimary);
+  --buttonBackgroundHovered: var(--themeDarkAlt);
+  --buttonBackgroundPressed: var(--themeDark);
+  --buttonBackgroundDisabled: var(--neutralLighter);
+  --buttonBorder: transparent;
+  --buttonBorderHovered: transparent;
+  --buttonBorderPressed: transparent;
+  --buttonBorderDisabled: transparent;
+  --buttonText: var(--white);
+  --buttonTextHovered: var(--white);
+  --buttonTextPressed: var(--white);
+  --buttonTextDisabled: var(--neutralQuaternary);
+}
+
+.checked {
+  --buttonBackground: var(--neutralLight);
+  --buttonBackgroundHovered: var(--neutralLighter);
+  --buttonBackgroundPressed: var(--neutralLighter);
+  --buttonBackgroundDisabled: var(--neutralLighterAlt);
+  --buttonBorder: var(--neutralTertiary);
+  --buttonBorderHovered: var(--neutralTertiary);
+  --buttonBorderPressed: var(--neutralTertiary);
+  --buttonBorderDisabled: var(--neutralQuaternaryAlt);
+  --buttonText: var(--neutralDark);
+  --buttonTextHovered: var(--black);
+  --buttonTextPressed: var(--black);
+  --buttonTextDisabled: var(--neutralTertiary);
+}
+
+.container {
+  align-items: center;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: var(--space-xxs);
+  height: 100%;
+  justify-content: center;
+}
+
+.icon {
+  display: block;
+}
+
+.text {
+  display: block;
+}

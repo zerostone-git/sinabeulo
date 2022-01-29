@@ -12,18 +12,20 @@
   "private": true,
   "scripts": {
     "test": "echo -e \"I don't test.\"",
-    "build": "webpack --env production && tsc --project tsconfig.build.json",
+    "lint": "eslint src/**",
+    "clean": "tsc --build tsconfig.build.json --clean",
+    "prebuild": "yarn lint",
+    "build": "webpack --env production && tsc --build tsconfig.build.json",
     "serve": "webpack serve"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.4",
     "@sinabeulo/utils": "^0.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.16.7",
     "@babel/preset-env": "^7.16.7",
     "@babel/preset-typescript": "^7.16.7",
-    "@testing-library/jest-dom": "^5.16.1",
-    "@types/jest": "^27.4.0",
     "@typescript-eslint/eslint-plugin": "^5.8.1",
     "@typescript-eslint/parser": "^5.8.1",
     "babel-loader": "^8.2.3",
@@ -35,12 +37,8 @@
     "eslint-config-airbnb-typescript": "^16.1.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.25.3",
-    "eslint-plugin-jest": "^25.3.4",
     "eslint-plugin-prettier": "^4.0.0",
     "html-webpack-plugin": "^5.5.0",
-    "jest": "^27.4.5",
-    "jest-transform-stub": "^2.0.0",
-    "jsdom": "^19.0.0",
     "mini-css-extract-plugin": "^2.4.5",
     "prettier": "^2.5.1",
     "sass": "^1.45.2",
@@ -48,6 +46,7 @@
     "style-loader": "^3.3.1",
     "typescript": "^4.5.4",
     "webpack": "^5.65.0",
-    "webpack-cli": "^4.9.1"
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^4.7.3"
   }
 }

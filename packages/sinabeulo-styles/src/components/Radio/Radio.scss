@@ -1,0 +1,123 @@
+.root {
+  --radioIconBackground: var(--white);
+  --radioIconBackgroundHovered: var(--white);
+  --radioIconBackgroundPressed: var(--white);
+  --radioIconBackgroundDisabled: var(--neutralLighterAlt);
+
+  --radioIconBorder: var(--neutralPrimaryAlt);
+  --radioIconBorderHovered: var(--neutralPrimaryAlt);
+  --radioIconBorderPressed: var(--neutralPrimaryAlt);
+  --radioIconBorderDisabled: var(--neutralQuaternary);
+
+  --radioIconText: transparent;
+  --radioIconTextHovered: var(--neutralPrimaryAlt);
+  --radioIconTextPressed: var(--neutralPrimaryAlt);
+  --radioIconTextDisabled: transparent;
+
+  --radioTextText: var(--neutralPrimaryAlt);
+  --radioTextTextHovered: var(--neutralPrimaryAlt);
+  --radioTextTextPressed: var(--neutralPrimaryAlt);
+  --radioTextTextDisabled: var(--neutralQuaternary);
+
+  box-sizing: border-box;
+  display: inline-block;
+  font-family: var(--font-family-m);
+  font-size: var(--font-size-m);
+  font-weight: var(--font-weight-m);
+  position: relative;
+
+  :hover {
+    .icon {
+      background-color: var(--radioIconBackgroundHovered);
+      border: 1px solid var(--radioIconBorderHovered);
+      color: var(--radioIconTextHovered);
+    }
+    .text {
+      color: var(--radioTextTextHovered);
+    }
+  }
+  :active {
+    .icon {
+      background-color: var(--radioIconBackgroundPressed);
+      border: 1px solid var(--radioIconBorderPressed);
+      color: var(--radioIconTextPressed);
+    }
+    .text {
+      color: var(--radioTextTextPressed);
+    }
+  }
+  &.disabled {
+    .container {
+      cursor: default;
+    }
+    .icon {
+      background-color: var(--radioIconBackgroundDisabled);
+      border: 1px solid var(--radioIconBorderDisabled);
+      color: var(--radioIconTextDisabled);
+    }
+    .text {
+      color: var(--radioTextTextDisabled);
+    }
+  }
+  * {
+    box-sizing: border-box;
+  }
+}
+
+.checked {
+  --radioIconBackground: var(--white);
+  --radioIconBackgroundHovered: var(--white);
+  --radioIconBackgroundPressed: var(--white);
+  --radioIconBackgroundDisabled: var(--white);
+
+  --radioIconBorder: var(--themePrimary);
+  --radioIconBorderHovered: var(--themeDarkAlt);
+  --radioIconBorderPressed: var(--themeDark);
+  --radioIconBorderDisabled: var(--neutralTertiaryAlt);
+
+  --radioIconText: var(--themePrimary);
+  --radioIconTextHovered: var(--themeDarkAlt);
+  --radioIconTextPressed: var(--themeDark);
+  --radioIconTextDisabled: var(--neutralTertiaryAlt);
+}
+
+.input {
+  background: none;
+  opacity: 0;
+  position: absolute;
+}
+
+.container {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  gap: var(--space-xxs);
+  position: relative;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.icon {
+  align-items: center;
+  background-color: var(--radioIconBackground);
+  border: 1px solid var(--radioIconBorder);
+  border-radius: 10px;
+  color: var(--radioIconText);
+  display: flex;
+  font-family: 'Font Awesome 5 Free';
+  font-size: 11px;
+  font-weight: 900;
+  height: var(--font-size-xxl);
+  justify-content: center;
+  line-height: calc(var(--font-size-xxl) - 2px);
+  overflow: hidden;
+  width: var(--font-size-xxl);
+}
+
+.text {
+  color: var(--radioTextText);
+  display: block;
+  line-height: var(--font-size-xxl);
+  margin-right: var(--space-xxs);
+}

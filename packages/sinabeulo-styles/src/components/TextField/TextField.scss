@@ -1,0 +1,122 @@
+.root {
+  width: 200px;
+  --textFieldBackground: var(--white);
+  --textFieldBackgroundHovered: var(--white);
+  --textFieldBackgroundPressed: var(--white);
+  --textFieldBackgroundDisabled: var(--neutralLighterAlt);
+
+  --textFieldBorder: var(--neutralTertiary);
+  --textFieldBorderHovered: var(--neutralTertiary);
+  --textFieldBorderPressed: var(--neutralTertiary);
+  --textFieldBorderDisabled: var(--neutralLighter);
+
+  --textFieldText: var(--neutralPrimaryAlt);
+  --textFieldTextHovered: var(--neutralDark);
+  --textFieldTextPressed: var(--neutralDark);
+  --textFieldTextDisabled: var(--neutralTertiaryAlt);
+
+  --textFieldIconText: var(--neutralSecondaryAlt);
+  --textFieldIconTextHovered: var(--neutralSecondary);
+  --textFieldIconTextPressed: var(--neutralSecondary);
+  --textFieldIconTextDisabled: var(--neutralQuaternaryAlt);
+
+  background-color: var(--textFieldBackground);
+  border: 1px solid var(--textFieldBorder);
+  border-radius: 2px;
+  box-sizing: border-box;
+  color: var(--textFieldText);
+  display: inline-block;
+  font-family: var(--font-family-m);
+  font-size: var(--font-size-m);
+  font-weight: var(--font-weight-m);
+  height: var(--font-size-xxxxxl);
+  line-height: calc(var(--font-size-xxxxxl) - 2px);
+  min-width: 80px;
+  outline: transparent;
+  position: relative;
+  text-decoration: none;
+  text-align: center;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+
+  &:hover:not(.disabled) {
+    background-color: var(--textFieldBackgroundHovered);
+    border-color: var(--textFieldBorderHovered);
+    color: var(--textFieldTextHovered);
+
+    .icon {
+      color: var(--textFieldIconTextHovered);
+    }
+  }
+  &:active:not(.disabled) {
+    background-color: var(--textFieldBackgroundPressed);
+    border-color: var(--textFieldBorderPressed);
+    color: var(--textFieldTextPressed);
+
+    .icon {
+      color: var(--textFieldIconTextPressed);
+    }
+  }
+  &.disabled {
+    background-color: var(--textFieldBackgroundDisabled);
+    border-color: var(--textFieldBorderDisabled);
+    color: var(--textFieldTextDisabled);
+    cursor: default;
+
+    .icon {
+      color: var(--textFieldIconTextDisabled);
+    }
+  }
+  * {
+    box-sizing: border-box;
+  }
+}
+
+.container {
+  align-items: stretch;
+  cursor: text;
+  display: flex;
+  height: 100%;
+  position: relative;
+}
+
+.input {
+  background-color: transparent;
+  border: none;
+  color: inherit;
+  flex: 1;
+  font-family: inherit;
+  font-size: inherit;
+  margin: 0;
+  min-width: 0;
+  outline: none;
+  padding: 0 var(--space-xs);
+}
+
+.hasIcon {
+  .input {
+    padding-right: var(--space-xl);
+  }
+}
+
+.icon {
+  color: var(--textFieldIconText);
+  font-family: 'Font Awesome 5 Free';
+  font-size: 14px;
+  font-weight: 900;
+  pointer-events: none;
+  position: absolute;
+  right: 6px;
+}
+
+.button {
+  border: none;
+  font-family: 'Font Awesome 5 Free';
+  font-size: 14px;
+  font-weight: 900;
+  height: 30px;
+  margin: 0;
+  padding: 0px var(--space-xs);
+  width: 30px;
+}

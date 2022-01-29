@@ -1,0 +1,41 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "composite": true,
+    "declaration": true,
+    "declarationDir": "dist/types",
+    "emitDeclarationOnly": true,
+    "outDir": "dist",
+    "preserveValueImports": true,
+    "rootDir": "src",
+    "types": ["svelte"]
+    // "paths": {
+    //   "@sinabeulo/styles": ["../sinabeulo-styles/src/index.ts"],
+    //   "@sinabeulo/utils": ["../sinabeulo-utils/src/index.ts"]
+    // }
+  },
+  "references": [
+    {
+      "path": "../sinabeulo-styles"
+    },
+    {
+      "path": "../sinabeulo-utils"
+    }
+  ],
+  "files": [
+    "src/components/Button/Button.svelte",
+    "src/components/Button/__tests__/ButtonTest.svelte",
+    "src/components/Checkbox/Checkbox.svelte",
+    "src/components/Checkbox/__tests__/ControlledCheckbox.svelte",
+    "src/components/Radio/Radio.svelte",
+    "src/components/Radio/RadioGroup.svelte",
+    "src/components/Radio/__tests__/ControlledRadioGroup.svelte",
+    "src/preview/App.svelte",
+    "src/preview/ButtonPreview.svelte",
+    "src/preview/CheckboxPreview.svelte",
+    "src/preview/RadioGroupPreview.svelte"
+  ],
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist"]
+}

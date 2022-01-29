@@ -13,15 +13,15 @@ module.exports = function (env, args) {
     entry: {
       index: path.resolve(__dirname, 'src', 'index.ts'),
     },
+    externals: {
+      '@sinabeulo/utils': '@sinabeulo/utils',
+    },
     output: {
       filename: '[name].js',
       library: {
         type: 'umd',
       },
       path: path.resolve(__dirname, 'dist'),
-    },
-    externals: {
-      '@sinabeulo/utils': '@sinabeulo/utils',
     },
     module: {
       rules: [
@@ -40,6 +40,11 @@ module.exports = function (env, args) {
                 modules: {
                   mode: 'local',
                   exportLocalsConvention: 'camelCase',
+                  ...(isProduction
+                    ? {}
+                    : {
+                        localIdentName: '[name]__[local]--[hash:base64:5]',
+                      }),
                 },
                 importLoaders: 1,
               },
@@ -94,7 +99,7 @@ module.exports = function (env, args) {
     };
     config.plugins.push(
       new HtmlWebpackPlugin({
-        title: 'sinabeulo',
+        title: 'sinabeulo-styles',
       })
     );
     delete config.externals;

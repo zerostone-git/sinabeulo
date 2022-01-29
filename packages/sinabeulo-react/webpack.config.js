@@ -1,7 +1,6 @@
 const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = function (env, args) {
@@ -32,7 +31,7 @@ module.exports = function (env, args) {
           loader: 'babel-loader',
         },
         {
-          test: /\.css$/i,
+          test: /\.((c|sa|sc)ss)$/i,
           use: [
             'style-loader',
             {
@@ -45,11 +44,17 @@ module.exports = function (env, args) {
                 importLoaders: 1,
               },
             },
+            {
+              loader: 'sass-loader',
+              options: {
+                implementation: require('sass'),
+              },
+            },
           ],
         },
       ],
     },
-    plugins: [new CleanWebpackPlugin(), new MiniCssExtractPlugin()],
+    plugins: [new CleanWebpackPlugin()],
     resolve: {
       modules: ['node_modules'],
       extensions: ['.js', '.jsx', '.ts', '.tsx'],
@@ -85,11 +90,11 @@ module.exports = function (env, args) {
     config.devtool = 'eval';
     config.devServer = {
       hot: true,
-      port: 8080,
+      port: 8081,
     };
     config.plugins.push(
       new HtmlWebpackPlugin({
-        title: 'sinabeulo',
+        title: 'sinabeulo-react',
       })
     );
     delete config.externals;

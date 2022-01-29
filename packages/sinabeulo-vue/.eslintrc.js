@@ -20,18 +20,6 @@ module.exports = {
     project: './tsconfig.json',
   },
   rules: {
-    'import/extensions': [
-      'error',
-      'ignorePackages',
-      {
-        js: 'always',
-        mjs: 'always',
-        jsx: 'always',
-        ts: 'always',
-        tsx: 'always',
-        'd.ts': 'always',
-      },
-    ],
     'import/order': [
       'error',
       {
@@ -58,17 +46,6 @@ module.exports = {
         },
       },
     ],
-    'import/extensions': [
-      'error',
-      'ignorePackages',
-      {
-        js: 'never',
-        mjs: 'never',
-        jsx: 'never',
-        ts: 'never',
-        tsx: 'never',
-      },
-    ],
     '@typescript-eslint/explicit-module-boundary-types': 'off',
   },
   settings: {
@@ -83,6 +60,7 @@ module.exports = {
       files: ['*.ts', '*.tsx'],
       rules: {
         '@typescript-eslint/explicit-module-boundary-types': ['error'],
+        '@typescript-eslint/unbound-method': 'off',
       },
     },
   ],
